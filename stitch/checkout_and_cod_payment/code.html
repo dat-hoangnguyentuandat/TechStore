@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thanh Toán - TechStore</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D70018",
+                        "background-light": "#F4F6F8",
+                        "background-dark": "#111827",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1F2937",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<header class="bg-primary text-white sticky top-0 z-50 shadow-md">
+<div class="container mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2 cursor-pointer">
+<span class="material-icons-round text-3xl">bolt</span>
+<span class="text-xl font-bold tracking-tight uppercase">TechStore</span>
+</div>
+<div class="hidden md:flex items-center gap-8 text-sm font-medium">
+<a class="hover:opacity-80 transition" href="#">Sản phẩm</a>
+<a class="hover:opacity-80 transition" href="#">Khuyến mãi</a>
+<a class="hover:opacity-80 transition" href="#">Cửa hàng</a>
+<a class="hover:opacity-80 transition" href="#">Liên hệ</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1 text-sm bg-white/10 px-3 py-1.5 rounded-full">
+<span class="material-icons-round text-sm">headset_mic</span>
+                    1800.2097
+                </button>
+</div>
+</div>
+</header>
+<main class="container mx-auto px-4 py-8">
+<div class="flex items-center justify-center mb-10 max-w-2xl mx-auto">
+<div class="flex items-center text-primary">
+<div class="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center font-bold text-sm">1</div>
+<span class="ml-2 font-semibold text-sm md:text-base">Giỏ hàng</span>
+</div>
+<div class="flex-1 h-px bg-primary mx-4"></div>
+<div class="flex items-center text-primary">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">2</div>
+<span class="ml-2 font-semibold text-sm md:text-base">Thanh toán</span>
+</div>
+<div class="flex-1 h-px bg-slate-300 dark:bg-slate-700 mx-4"></div>
+<div class="flex items-center text-slate-400">
+<div class="w-8 h-8 rounded-full border-2 border-slate-300 dark:border-slate-700 flex items-center justify-center font-bold text-sm">3</div>
+<span class="ml-2 font-semibold text-sm md:text-base">Hoàn tất</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8 space-y-6">
+<section class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-icons-round text-primary">person</span>
+<h2 class="text-lg font-bold">1. Thông tin người mua</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-500 uppercase">Họ tên (bắt buộc)</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary" placeholder="Nhập họ và tên của bạn" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-semibold text-slate-500 uppercase">Số điện thoại</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary" placeholder="Nhập số điện thoại" type="tel"/>
+</div>
+<div class="md:col-span-2 space-y-1">
+<label class="text-xs font-semibold text-slate-500 uppercase">Địa chỉ nhận hàng</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary focus:border-primary" placeholder="Số nhà, tên đường, tòa nhà..." type="text"/>
+</div>
+<div class="grid grid-cols-3 gap-4 md:col-span-2">
+<select class="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary">
+<option>Chọn Tỉnh/Thành phố</option>
+</select>
+<select class="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary">
+<option>Quận/Huyện</option>
+</select>
+<select class="bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary">
+<option>Phường/Xã</option>
+</select>
+</div>
+<div class="md:col-span-2 space-y-1">
+<label class="text-xs font-semibold text-slate-500 uppercase">Ghi chú khác</label>
+<textarea class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg focus:ring-primary" placeholder="Ghi chú thêm (không bắt buộc)" rows="2"></textarea>
+</div>
+</div>
+</section>
+<section class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-icons-round text-primary">local_shipping</span>
+<h2 class="text-lg font-bold">2. Hình thức giao hàng</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="relative flex items-center p-4 border-2 border-primary bg-primary/5 rounded-xl cursor-pointer">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4" name="shipping" type="radio"/>
+<div class="ml-4">
+<span class="block font-bold">Giao hàng tiêu chuẩn</span>
+<span class="block text-xs text-slate-500">Nhận hàng sau 2-4 ngày làm việc</span>
+</div>
+<span class="ml-auto font-bold text-primary">Miễn phí</span>
+</label>
+<label class="relative flex items-center p-4 border-2 border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-600 rounded-xl cursor-pointer">
+<input class="text-primary focus:ring-primary h-4 w-4" name="shipping" type="radio"/>
+<div class="ml-4">
+<span class="block font-bold">Giao hàng hỏa tốc (2H)</span>
+<span class="block text-xs text-slate-500">Nhận hàng trong vòng 2 giờ</span>
+</div>
+<span class="ml-auto font-bold">120.000đ</span>
+</label>
+</div>
+</section>
+<section class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-icons-round text-primary">payments</span>
+<h2 class="text-lg font-bold">3. Phương thức thanh toán</h2>
+</div>
+<div class="space-y-3">
+<label class="flex items-center p-4 border-2 border-primary bg-primary/5 rounded-xl cursor-pointer group">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4" name="payment" type="radio"/>
+<span class="material-icons-round ml-4 text-slate-600 dark:text-slate-400">payments</span>
+<div class="ml-3">
+<span class="block font-bold">Thanh toán khi nhận hàng (COD)</span>
+<span class="block text-xs text-slate-500">Thanh toán trực tiếp khi nhận hàng</span>
+</div>
+</label>
+<label class="flex items-center p-4 border-2 border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-600 rounded-xl cursor-pointer">
+<input class="text-primary focus:ring-primary h-4 w-4" name="payment" type="radio"/>
+<span class="material-icons-round ml-4 text-slate-600 dark:text-slate-400">credit_card</span>
+<div class="ml-3">
+<span class="block font-bold">Thẻ Tín dụng / Ghi nợ</span>
+<span class="block text-xs text-slate-500">Visa, Mastercard, JCB</span>
+</div>
+<div class="ml-auto flex gap-1">
+<img alt="Visa" class="h-4 opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo4Yk0gglAqEM54d-ihwQ-eLEUMAgGvzUpjGupjB_Lh5m83whpW5JaEI_82tV5R8qYyHJdHXUY4DPCdglY2uGUkoItplUZajqpUzTE2xJZ_gs3wnWCS5DGgvToxNJPp49O7jwxcH8iN5FxutLHsVphbyl9uRkwgeM4OwdwXumDsE3Ndvm4aZNrj43coeRw7UCkzN5foVq_n3RAuHdpHcsyiiQBqVXj5dKsF4zMRZ9Jz-TySjaDFUnzn0a1DkcJROtaBmk77DV-XFP9"/>
+<img alt="Mastercard" class="h-4 opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmUug_n49WtWNjN4F28qqEqlduLUTwlEeyjmMnhzw9u_mHG5CgJ90CsaJGHozxOMvljiquelihtRk54t55ZhOHzwC1qYi3MqM01mmi3wsyLj_anAxWe8p3aKBEg831WiL0bvAPeBtmmy9mC78mzWogwAgnPG-BgXxXichUlGSWpJlsO4Pk4oU4oWDEUlhU2klzVYhbxEgCZJ_RwwqdnhYmLewNSXDPU9Kh5aV1CnkoJSIzePLHsKk8Mv34HR-naQUrAJmMObvsoSRK"/>
+</div>
+</label>
+<label class="flex items-center p-4 border-2 border-slate-100 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-600 rounded-xl cursor-pointer">
+<input class="text-primary focus:ring-primary h-4 w-4" name="payment" type="radio"/>
+<span class="material-icons-round ml-4 text-slate-600 dark:text-slate-400">account_balance_wallet</span>
+<div class="ml-3">
+<span class="block font-bold">Ví điện tử</span>
+<span class="block text-xs text-slate-500">MoMo, ZaloPay, VNPay</span>
+</div>
+</label>
+</div>
+</section>
+</div>
+<div class="lg:col-span-4">
+<div class="sticky top-24 space-y-4">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-lg font-bold">Tổng đơn hàng</h2>
+<button class="text-primary text-sm font-semibold hover:underline">Sửa giỏ hàng</button>
+</div>
+<div class="space-y-4 mb-6">
+<div class="flex gap-4">
+<div class="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 flex items-center justify-center p-2">
+<img alt="iPhone 15 Pro" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXzLSSIEJrj2wR6JBaTWkJB5GoVhgaRq9d2xNlHVAvPg3lp3z2RN67ZU_G_VpOAXdJmvxl3WMSmrRaqO3vusvQkPpBDoOQKoQvGPuK76gMDaLFCbi7sKni-krK7YPDfXdvEL03RUsFf-wl5myArCs-fK7Jf_TTJGAD1UoMWX4AWONLe1wsCKdGkMaLUx20NBUnuBw5Lyc0HNWgdggFRlz8IfPqK6gaU-ylJy8u1x52KBgbLbIp6n9fEX1FldaZwnX8r1du-zkHyFzG"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold line-clamp-2">iPhone 15 Pro Max 256GB - Titanium Natural</h4>
+<div class="flex justify-between mt-1">
+<span class="text-xs text-slate-500">SL: 1</span>
+<span class="text-sm font-bold text-primary">34.990.000đ</span>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-20 h-20 bg-slate-100 dark:bg-slate-800 rounded-lg flex-shrink-0 flex items-center justify-center p-2">
+<img alt="Protective Case" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM5CRk4D9GT-egd8eYhCjZdP5LXPQCiP6P4lPDj5cHYa24I82S0M5Ta2cOVmy5spFoULf2ySzDjSJ9z4jd3_mouYdDD0HZ8QNPwAKrzIg384SKBBqq-tiY2ePXzI_L-pM2ADme7VtN-TxHrn4QkwAiTQsEgJpeRENB_g38egdkZIuRjPOu1CvDf2bxthY7EseRRP4yrGtJMbimlsV6kDeVTa48vsXGu3vseVqcROyWgvKVZuK18ex3x9BCLcF4dpLPUiSD3R5i3SZa"/>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold line-clamp-2">Ốp lưng Silicone với MagSafe</h4>
+<div class="flex justify-between mt-1">
+<span class="text-xs text-slate-500">SL: 1</span>
+<span class="text-sm font-bold text-primary">1.290.000đ</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-100 dark:border-slate-800 pt-4 space-y-3">
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Tạm tính</span>
+<span>36.280.000đ</span>
+</div>
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Phí vận chuyển</span>
+<span class="text-green-600 dark:text-green-400 font-medium">Miễn phí</span>
+</div>
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Giảm giá</span>
+<span>-0đ</span>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex gap-2">
+<input class="flex-1 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-sm px-3" placeholder="Mã giảm giá" type="text"/>
+<button class="bg-slate-900 dark:bg-slate-700 text-white px-4 py-2 rounded-lg text-sm font-bold">Áp dụng</button>
+</div>
+</div>
+<div class="pt-4 flex justify-between items-end">
+<span class="text-lg font-bold">Tổng thanh toán</span>
+<div class="text-right">
+<span class="block text-2xl font-black text-primary">36.280.000đ</span>
+<span class="text-[10px] text-slate-400 uppercase tracking-wider">(Đã bao gồm VAT)</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-black py-4 rounded-xl mt-6 shadow-lg shadow-primary/20 transition-all active:scale-[0.98] uppercase tracking-wide">
+                            Xác nhận đặt hàng
+                        </button>
+<p class="text-[11px] text-slate-500 text-center mt-4 leading-relaxed">
+                            Bằng cách nhấn "Xác nhận đặt hàng", bạn đồng ý với <a class="text-primary hover:underline" href="#">Điều khoản dịch vụ</a> và <a class="text-primary hover:underline" href="#">Chính sách bảo mật</a> của chúng tôi.
+                        </p>
+</div>
+<div class="bg-white/50 dark:bg-white/5 border border-dashed border-slate-300 dark:border-slate-700 p-4 rounded-xl grid grid-cols-2 gap-4">
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-primary text-xl">verified_user</span>
+<span class="text-[11px] font-semibold">Hàng chính hãng</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-primary text-xl">published_with_changes</span>
+<span class="text-[11px] font-semibold">Đổi trả dễ dàng</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-primary text-xl">security</span>
+<span class="text-[11px] font-semibold">Thanh toán an toàn</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-icons-round text-primary text-xl">support_agent</span>
+<span class="text-[11px] font-semibold">Hỗ trợ 24/7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-20 py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-4 text-primary">
+<span class="material-icons-round text-2xl">bolt</span>
+<span class="text-lg font-bold tracking-tight uppercase">TechStore</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-6 max-w-sm">
+                        Hệ thống bán lẻ điện thoại, laptop, máy tính bảng chính hãng với hơn 100 cửa hàng trên toàn quốc.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm border border-slate-200 dark:border-slate-700 hover:text-primary transition" href="#">
+<span class="material-icons-round">facebook</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm border border-slate-200 dark:border-slate-700 hover:text-primary transition" href="#">
+<span class="material-icons-round">play_circle</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-sm border border-slate-200 dark:border-slate-700 hover:text-primary transition" href="#">
+<span class="material-icons-round">camera_alt</span>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold mb-4">Dịch vụ</h3>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Trả góp</a></li>
+<li><a class="hover:text-primary" href="#">Chính sách bảo hành</a></li>
+<li><a class="hover:text-primary" href="#">Khách hàng doanh nghiệp</a></li>
+<li><a class="hover:text-primary" href="#">Bảo hiểm rơi vỡ</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold mb-4">Hỗ trợ</h3>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Tra cứu bảo hành</a></li>
+<li><a class="hover:text-primary" href="#">Dịch vụ sửa chữa</a></li>
+<li><a class="hover:text-primary" href="#">Theo dõi đơn hàng</a></li>
+<li><a class="hover:text-primary" href="#">Câu hỏi thường gặp</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold mb-4">Công ty</h3>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Về chúng tôi</a></li>
+<li><a class="hover:text-primary" href="#">Hệ thống cửa hàng</a></li>
+<li><a class="hover:text-primary" href="#">Tuyển dụng</a></li>
+<li><a class="hover:text-primary" href="#">Liên hệ</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2024 TechStore. Bảo lưu mọi quyền.</p>
+<div class="flex gap-6">
+<a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Chính sách bảo mật</a>
+<a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Điều khoản sử dụng</a>
+<a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Cài đặt Cookie</a>
+</div>
+</div>
+</div>
+</footer>
+<div class="fixed bottom-6 right-6 z-50">
+<button class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 active:scale-95" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-round">dark_mode</span>
+</button>
+</div>
+
+</body></html>

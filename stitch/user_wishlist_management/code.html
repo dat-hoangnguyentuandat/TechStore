@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sản Phẩm Yêu Thích - TechStore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#d70018", // CellphoneS red
+                        "background-light": "#f4f6f8",
+                        "background-dark": "#111827",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<header class="bg-primary sticky top-0 z-50 shadow-md">
+<div class="container mx-auto px-4 h-16 flex items-center justify-between gap-4">
+<div class="flex items-center gap-2 cursor-pointer">
+<span class="material-icons-round text-white text-3xl">bolt</span>
+<span class="text-white font-bold text-xl tracking-tight hidden md:block uppercase">TechStore</span>
+</div>
+<div class="flex-grow max-w-2xl relative">
+<input class="w-full py-2 px-10 rounded-md border-none focus:ring-2 focus:ring-red-400 text-sm" placeholder="Bạn cần tìm gì?" type="text"/>
+<span class="material-icons-round absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+</div>
+<nav class="flex items-center gap-4 text-white">
+<div class="hidden lg:flex flex-col items-center cursor-pointer group">
+<span class="material-icons-round">contact_support</span>
+<span class="text-[10px] font-medium">Hotline 1800.2097</span>
+</div>
+<div class="hidden lg:flex flex-col items-center cursor-pointer">
+<span class="material-icons-round">location_on</span>
+<span class="text-[10px] font-medium">Cửa hàng gần bạn</span>
+</div>
+<div class="flex flex-col items-center cursor-pointer">
+<span class="material-icons-round">shopping_cart</span>
+<span class="text-[10px] font-medium relative">
+                        Giỏ hàng
+                        <span class="absolute -top-7 -right-2 bg-yellow-400 text-primary text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">3</span>
+</span>
+</div>
+<div class="flex flex-col items-center cursor-pointer bg-red-700/50 p-1.5 rounded-lg px-3">
+<span class="material-icons-round">person</span>
+<span class="text-[10px] font-medium">Smember</span>
+</div>
+</nav>
+</div>
+</header>
+<main class="container mx-auto px-4 py-8">
+<nav class="flex text-sm text-slate-500 dark:text-slate-400 mb-6 gap-2">
+<a class="hover:text-primary" href="#">Trang chủ</a>
+<span>/</span>
+<span class="text-slate-900 dark:text-slate-200 font-medium">Sản phẩm yêu thích</span>
+</nav>
+<div class="flex flex-col lg:flex-row gap-8">
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm">
+<div class="flex items-center gap-3 mb-6 border-b border-slate-100 dark:border-slate-700 pb-4">
+<div class="w-12 h-12 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden">
+<span class="material-icons-round text-3xl text-slate-400">account_circle</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Xin chào,</p>
+<p class="font-bold">Nguyễn Văn A</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-icons-round text-lg">dashboard</span>
+<span class="text-sm font-medium">Bảng điều khiển</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-icons-round text-lg">history</span>
+<span class="text-sm font-medium">Lịch sử đơn hàng</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg bg-red-50 dark:bg-red-900/20 text-primary transition-colors" href="#">
+<span class="material-icons-round text-lg">favorite</span>
+<span class="text-sm font-bold">Danh sách của tôi</span>
+</a>
+<a class="flex items-center gap-3 p-3 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors" href="#">
+<span class="material-icons-round text-lg">settings</span>
+<span class="text-sm font-medium">Tài khoản của tôi</span>
+</a>
+<div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-700">
+<a class="flex items-center gap-3 p-3 rounded-lg text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors" href="#">
+<span class="material-icons-round text-lg">logout</span>
+<span class="text-sm font-medium">Đăng xuất</span>
+</a>
+</div>
+</nav>
+</div>
+</aside>
+<section class="flex-grow">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+<h1 class="text-2xl font-bold flex items-center gap-2">
+                        Sản phẩm yêu thích
+                        <span class="text-sm font-normal text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded-full">6</span>
+</h1>
+<button class="flex items-center justify-center gap-2 px-4 py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-all font-medium">
+<span class="material-icons-round text-sm">delete_sweep</span>
+                        Xóa tất cả
+                    </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group relative">
+<button class="absolute top-3 right-3 z-10 p-1.5 bg-white/80 dark:bg-slate-900/80 rounded-full text-slate-400 hover:text-primary transition-colors group/close" title="Xóa khỏi danh sách">
+<span class="material-icons-round text-lg">close</span>
+</button>
+<div class="p-4 flex-grow">
+<div class="aspect-square mb-4 overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-700 flex items-center justify-center">
+<img alt="iPhone 15 Pro Max" class="object-contain h-full w-full group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxNroYhMorcfhRr_Y3bfAhiB_-OZ65RVvzZT-X4qkqdEAPMO2ks-ixsRVfnrngAFpAN3rF649YTjbRgbKWH6orTyDNz2dFGoxT6rKmdqSOw3aJkQcrWJVvte7qBE23ytrSpPXOFZ922EqfgTZ70fV5CAe_eM-NRsKXSWT35Cxg-_I-FPrasM3ZZWZFYmdVhtZ0zo7RALqDUGmlb6u63zlmsIxuhwoI0SuA1243d3mYaiZ1-qJHCD9JzyShIDwxHIr-qUIvLA-i8UXJ"/>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-icons-round text-green-500 text-sm">check_circle</span>
+<span class="text-[10px] font-bold text-green-600 uppercase">Còn hàng</span>
+</div>
+<h3 class="font-bold text-sm mb-2 line-clamp-2 leading-snug">iPhone 15 Pro Max 256GB | Chính hãng VN/A</h3>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-bold text-lg">29.690.000₫</span>
+<span class="text-xs text-slate-400 line-through">34.990.000₫</span>
+</div>
+</div>
+<div class="p-4 pt-0 mt-auto flex flex-col gap-2">
+<button class="w-full bg-primary text-white py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:bg-red-700 transition-colors">
+<span class="material-icons-round text-sm">shopping_cart</span>
+                                Thêm vào giỏ
+                            </button>
+<button class="w-full border border-primary text-primary py-1.5 rounded-lg font-bold text-[13px] flex items-center justify-center gap-2 hover:bg-red-50 transition-colors">
+                                Mua ngay
+                            </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group relative">
+<button class="absolute top-3 right-3 z-10 p-1.5 bg-white/80 dark:bg-slate-900/80 rounded-full text-slate-400 hover:text-primary transition-colors" title="Xóa khỏi danh sách">
+<span class="material-icons-round text-lg">close</span>
+</button>
+<div class="p-4 flex-grow">
+<div class="aspect-square mb-4 overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-700 flex items-center justify-center">
+<img alt="iPad Pro M2" class="object-contain h-full w-full group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPURTdD8PsvwgZbkQr-b_EvS9qSx34QfR9vFHlaaNOB8MP3epx_ADcZWzfaQKFIcSbdH_02A5zQj143BaSaaXLF0XzUoB9gbXgfwq9JG79ej6lXJfUl-ElkgcteiwS2k6Fc9x8HkBAmaTBQWic44wvN3flDAPmaPIAQr0llYZnCesIMjxEvt6wtfGQtCRQOuTHvEfMdyFoIZfyJ04z4FcmJ04RLRfM1-dBC85LYF_m-BdxHlOGOjmIdsqujVtF3PGK8tAxSmqU2aMO"/>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-icons-round text-green-500 text-sm">check_circle</span>
+<span class="text-[10px] font-bold text-green-600 uppercase">Còn hàng</span>
+</div>
+<h3 class="font-bold text-sm mb-2 line-clamp-2 leading-snug">iPad Pro 11 inch M2 MNPQ3ZP/A (WiFi 128GB)</h3>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-bold text-lg">20.590.000₫</span>
+<span class="text-xs text-slate-400 line-through">23.990.000₫</span>
+</div>
+</div>
+<div class="p-4 pt-0 mt-auto flex flex-col gap-2">
+<button class="w-full bg-primary text-white py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:bg-red-700 transition-colors">
+<span class="material-icons-round text-sm">shopping_cart</span>
+                                Thêm vào giỏ
+                            </button>
+<button class="w-full border border-primary text-primary py-1.5 rounded-lg font-bold text-[13px] flex items-center justify-center gap-2 hover:bg-red-50 transition-colors">
+                                Mua ngay
+                            </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group relative opacity-75">
+<button class="absolute top-3 right-3 z-10 p-1.5 bg-white/80 dark:bg-slate-900/80 rounded-full text-slate-400 hover:text-primary transition-colors" title="Xóa khỏi danh sách">
+<span class="material-icons-round text-lg">close</span>
+</button>
+<div class="p-4 flex-grow">
+<div class="aspect-square mb-4 overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-700 flex items-center justify-center grayscale">
+<img alt="Sony Headphones" class="object-contain h-full w-full group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz2FOwiN1RDFckKjA8V0Z3aK_q2-Tve-5feP_MZMpDNxSpOOZ0jeWa3BNjCvXCLUmFp7K019NI1hxNsauMy_Wx58qu48qUylMsNgjFYLel30CoA9w58qunt4RCW0ulpAJJhhzCTHKX1BmJkWHc1K37DeYbEsK9-lE2iWg43L5J3Hg2fOjtOEEvaPdaA85n74CR0Njwl98sQjBpvy7mi-p4CyVp6mGoCivf8JhKvQLcj1HuGcG8EyYDgJwTr8csYgHBSmlhtHRz2wJA"/>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-icons-round text-slate-400 text-sm">error_outline</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Hết hàng</span>
+</div>
+<h3 class="font-bold text-sm mb-2 line-clamp-2 leading-snug">Tai nghe chụp tai Sony WH-1000XM5</h3>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-bold text-lg">7.890.000₫</span>
+<span class="text-xs text-slate-400 line-through">8.490.000₫</span>
+</div>
+</div>
+<div class="p-4 pt-0 mt-auto">
+<button class="w-full bg-slate-200 dark:bg-slate-700 text-slate-400 py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 cursor-not-allowed" disabled="">
+<span class="material-icons-round text-sm">notifications_active</span>
+                                Nhận thông báo
+                            </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group relative">
+<button class="absolute top-3 right-3 z-10 p-1.5 bg-white/80 dark:bg-slate-900/80 rounded-full text-slate-400 hover:text-primary transition-colors" title="Xóa khỏi danh sách">
+<span class="material-icons-round text-lg">close</span>
+</button>
+<div class="p-4 flex-grow">
+<div class="aspect-square mb-4 overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-700 flex items-center justify-center">
+<img alt="Laptop Gaming" class="object-contain h-full w-full group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZqgtrWl3mVccb4apgShZmLXuq06G2oku6qUj4oO0JI_d8CASJvPqaT0EpoiVnfLE9SpD2MpBORj2yZqfIENvpczOINLo6sz9GtBzYvFBXFRjZ7TvqFQRcCaLIjeLuZMwC5g36viA9tvREutVofkNva7Y2ccAFAHLOkBrprWWwjMsIZeWeKLIEYuexELFKPjs7ZMb9PXNcx7QiDBVNOxfOUllcHeta9IGO7JsgIqSld1Sla-9kOx7ZAsqcUAsH2E6XVERc1cjvcU6F"/>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-icons-round text-green-500 text-sm">check_circle</span>
+<span class="text-[10px] font-bold text-green-600 uppercase">Còn hàng</span>
+</div>
+<h3 class="font-bold text-sm mb-2 line-clamp-2 leading-snug">Laptop ASUS TUF Gaming A15 FA507NU-LP034W</h3>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-bold text-lg">22.490.000₫</span>
+<span class="text-xs text-slate-400 line-through">26.990.000₫</span>
+</div>
+</div>
+<div class="p-4 pt-0 mt-auto flex flex-col gap-2">
+<button class="w-full bg-primary text-white py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:bg-red-700 transition-colors">
+<span class="material-icons-round text-sm">shopping_cart</span>
+                                Thêm vào giỏ
+                            </button>
+<button class="w-full border border-primary text-primary py-1.5 rounded-lg font-bold text-[13px] flex items-center justify-center gap-2 hover:bg-red-50 transition-colors">
+                                Mua ngay
+                            </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group relative">
+<button class="absolute top-3 right-3 z-10 p-1.5 bg-white/80 dark:bg-slate-900/80 rounded-full text-slate-400 hover:text-primary transition-colors" title="Xóa khỏi danh sách">
+<span class="material-icons-round text-lg">close</span>
+</button>
+<div class="p-4 flex-grow">
+<div class="aspect-square mb-4 overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-700 flex items-center justify-center">
+<img alt="Samsung Watch" class="object-contain h-full w-full group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWDCQ3r9l4lp0iIRN5dTLhF4Al_hglOHgmnO916laiGLNvF-sqR33vlV8vCXJ4F_g4AXK8uOXadHBS0Z4sMlTdC6hGIlGu7GcFCp5XNMG_Xffyw_b0Wwz_GnJg0XgNTe2c0NhKWek4yuXbmp7VA1gPlVGircmP3nxfpv-sExrkSyuzW5eXvgtC9jhVIwT_hkpiDIl7oaqN3qyQiHlBtxVMMDr5mC2c__CDXnE18Gua3mtjwIgUubksnRVC7WCs2ywrIsdb00q9YvYj"/>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-icons-round text-green-500 text-sm">check_circle</span>
+<span class="text-[10px] font-bold text-green-600 uppercase">Còn hàng</span>
+</div>
+<h3 class="font-bold text-sm mb-2 line-clamp-2 leading-snug">Samsung Galaxy Watch6 Classic 43mm Bluetooth</h3>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-bold text-lg">6.990.000₫</span>
+<span class="text-xs text-slate-400 line-through">8.990.000₫</span>
+</div>
+</div>
+<div class="p-4 pt-0 mt-auto flex flex-col gap-2">
+<button class="w-full bg-primary text-white py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:bg-red-700 transition-colors">
+<span class="material-icons-round text-sm">shopping_cart</span>
+                                Thêm vào giỏ
+                            </button>
+<button class="w-full border border-primary text-primary py-1.5 rounded-lg font-bold text-[13px] flex items-center justify-center gap-2 hover:bg-red-50 transition-colors">
+                                Mua ngay
+                            </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group relative opacity-75">
+<button class="absolute top-3 right-3 z-10 p-1.5 bg-white/80 dark:bg-slate-900/80 rounded-full text-slate-400 hover:text-primary transition-colors" title="Xóa khỏi danh sách">
+<span class="material-icons-round text-lg">close</span>
+</button>
+<div class="p-4 flex-grow">
+<div class="aspect-square mb-4 overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-700 flex items-center justify-center grayscale">
+<img alt="Redmi Note" class="object-contain h-full w-full group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFJgAkZcH2h_LFIXnc_dV-13EiKyNDWryMpKFWf0XXynoSGlOILTB_sYp7LzOkJhoWJm7oldi3PSAEC3Fc_QAcID6WIkNekIQ4vR0_zrBkvDnqfpmbl9WZcUJwPnbJdLRJhJV17qM6vDo9wkJwpUTMvjsc-BeBqCgMDNa-ZipIW_R0i6Zp9YMJf1xBumAlkp7OI0HaMO4mZBT6de6BiQQNRZAOQakZm7Yn8eNPEDrM69_UQ74K0ByU_Q74Nu6a2GTPmPbCf2tBKleT"/>
+</div>
+<div class="flex items-center gap-1 mb-1">
+<span class="material-icons-round text-slate-400 text-sm">error_outline</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase">Hết hàng</span>
+</div>
+<h3 class="font-bold text-sm mb-2 line-clamp-2 leading-snug">Xiaomi Redmi Note 13 (6GB/128GB) - Chính hãng</h3>
+<div class="flex flex-col gap-1">
+<span class="text-primary font-bold text-lg">4.390.000₫</span>
+<span class="text-xs text-slate-400 line-through">4.890.000₫</span>
+</div>
+</div>
+<div class="p-4 pt-0 mt-auto">
+<button class="w-full bg-slate-200 dark:bg-slate-700 text-slate-400 py-2 rounded-lg font-bold text-sm flex items-center justify-center gap-2 cursor-not-allowed" disabled="">
+<span class="material-icons-round text-sm">notifications_active</span>
+                                Nhận thông báo
+                            </button>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-400 disabled:opacity-50" disabled="">
+<span class="material-icons-round">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300">
+<span class="material-icons-round">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 pt-12 pb-8">
+<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<h4 class="font-bold mb-4 uppercase text-sm">Tổng đài hỗ trợ miễn phí</h4>
+<ul class="text-sm space-y-2 text-slate-600 dark:text-slate-400">
+<li class="flex justify-between">Gọi mua hàng <span>1800.2097</span></li>
+<li class="flex justify-between">Khiếu nại, góp ý <span>1800.2063</span></li>
+<li class="flex justify-between">Bảo hành <span>1800.2064</span></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 uppercase text-sm">Thông tin và chính sách</h4>
+<ul class="text-sm space-y-2 text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Mua hàng và thanh toán Online</a></li>
+<li><a class="hover:text-primary" href="#">Mua hàng trả góp Online</a></li>
+<li><a class="hover:text-primary" href="#">Chính sách bảo hành</a></li>
+<li><a class="hover:text-primary" href="#">Tra cứu hóa đơn điện tử</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 uppercase text-sm">Dịch vụ và thông tin khác</h4>
+<ul class="text-sm space-y-2 text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary" href="#">Khách hàng doanh nghiệp (B2B)</a></li>
+<li><a class="hover:text-primary" href="#">Ưu đãi thanh toán</a></li>
+<li><a class="hover:text-primary" href="#">Quy chế hoạt động</a></li>
+<li><a class="hover:text-primary" href="#">Chính sách bảo mật</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 uppercase text-sm">Kết nối với chúng tôi</h4>
+<div class="flex gap-4 mb-4">
+<a class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded-full" href="#"><span class="material-icons-round text-lg">facebook</span></a>
+<a class="w-8 h-8 flex items-center justify-center bg-red-600 text-white rounded-full" href="#"><span class="material-icons-round text-lg">play_arrow</span></a>
+<a class="w-8 h-8 flex items-center justify-center bg-sky-500 text-white rounded-full" href="#"><span class="material-icons-round text-lg">send</span></a>
+</div>
+<h4 class="font-bold mb-2 uppercase text-sm">Website thành viên</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Hệ thống bán lẻ điện thoại di động hàng đầu Việt Nam
+                </p>
+</div>
+</div>
+<div class="container mx-auto px-4 mt-12 pt-6 border-t border-slate-100 dark:border-slate-800 text-center text-[10px] text-slate-400 uppercase tracking-widest">
+            © 2024 TechStore - Tất cả quyền được bảo lưu.
+        </div>
+</footer>
+<button class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40">
+<span class="material-icons-round">keyboard_arrow_up</span>
+</button>
+
+</body></html>

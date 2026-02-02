@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Giỏ hàng - TechStore</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#d70018",
+                        "background-light": "#f4f4f4",
+                        "background-dark": "#0f172a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200">
+<header class="bg-primary text-white py-4 shadow-md sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+<div class="flex items-center gap-2 cursor-pointer">
+<span class="material-symbols-outlined text-3xl">smartphone</span>
+<span class="text-2xl font-bold tracking-tight">TECHSTORE</span>
+</div>
+<div class="hidden md:flex flex-1 mx-8 max-w-xl">
+<div class="relative w-full">
+<input class="w-full py-2 px-4 rounded-md text-slate-800 focus:outline-none focus:ring-2 focus:ring-red-400" placeholder="Bạn cần tìm gì?" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-slate-400">search</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col items-center cursor-pointer">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-xs">Giỏ hàng</span>
+</div>
+<div class="flex flex-col items-center cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs">Đăng nhập</span>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-8">
+<nav class="flex text-sm mb-6 text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Trang chủ</a>
+<span class="mx-2">/</span>
+<span class="text-slate-800 dark:text-slate-200 font-medium">Giỏ hàng</span>
+</nav>
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="lg:w-2/3">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm overflow-hidden border border-slate-200 dark:border-slate-800">
+<div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-sm font-medium">Chọn tất cả</span>
+</label>
+<h1 class="text-xl font-bold flex items-center gap-2 border-l pl-4 border-slate-200 dark:border-slate-700">
+                            Giỏ hàng của bạn (3)
+                        </h1>
+</div>
+<button class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Tiếp tục mua sắm</button>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="p-6 flex flex-col sm:flex-row items-center gap-6 group relative">
+<div class="self-start sm:self-center">
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<img alt="iPhone 15 Pro Max" class="w-full h-full object-contain p-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy8m4mNyeqgL8Q4-g3RbhLk7s1JtuHPXS4PL73JuHE5yeAKrmqmedmCcPh2K_MPPwo1iHEoM0c5k92gLoj44NPPZOL547mGD9NG7TRlC7rwTlhSGyg3KpJ4xChsnIXIS9KIwlMlmwGKNqA_-H9zBF7ANgCjWY3z5Xdz1a4wzl8QrYX4i_3ZDorG2KzSg2le0y0QitLw3h0gp5Hi-XK84Ouo6Xx4tz1o4YvkfuHU2TBQC_-xTdqTc1Ntzj70OesSIXfcGEcQSD2XSzW"/>
+</div>
+<div class="flex-1 w-full">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-semibold text-lg leading-tight">iPhone 15 Pro Max 256GB - Chính hãng VN/A</h3>
+<p class="text-sm text-slate-500 mt-1">Màu sắc: Titan Tự Nhiên</p>
+</div>
+<button class="text-slate-400 hover:text-red-500 transition-colors flex items-center gap-1 group/del">
+<span class="text-xs opacity-0 group-hover/del:opacity-100 transition-opacity">Xóa</span>
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-400">Số lượng</span>
+<div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden h-9">
+<button class="px-3 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">-</button>
+<span class="px-4 font-medium border-x border-slate-200 dark:border-slate-700 h-full flex items-center">1</span>
+<button class="px-3 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">+</button>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">29.890.000₫</p>
+<p class="text-sm text-slate-400 line-through">34.990.000₫</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 flex flex-col sm:flex-row items-center gap-6 group relative">
+<div class="self-start sm:self-center">
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<img alt="iPad Pro M2" class="w-full h-full object-contain p-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDco0q_qHBhtwsjUEKLZcN4lomCZn8yhgUp_LV_UBm8EmWRDepnU-nZ81bZ463OowtCHcqCZCaYhidOhI-FLOSuZ19h0Iy-vMQlUxyOW8AK-_riqtN4aHtiDvtqt4RnoKOIbYzCCpjnN6gpKVD9NGjel3T2FzWIwrPGVOL6rFlJ-rfESjxNkuJ1JGzq_SRJ1LZb0Bwg52XQB38uuudcbfp2vcRiK1OwYztOUhWg-cu8KbbyHtepy4E5NWGcAW27Hyxfg6g2mA9fHFCO"/>
+</div>
+<div class="flex-1 w-full">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-semibold text-lg leading-tight">iPad Pro 11 inch M2 (2022) 128GB WiFi</h3>
+<p class="text-sm text-slate-500 mt-1">Màu sắc: Space Gray</p>
+</div>
+<button class="text-slate-400 hover:text-red-500 transition-colors flex items-center gap-1 group/del">
+<span class="text-xs opacity-0 group-hover/del:opacity-100 transition-opacity">Xóa</span>
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-400">Số lượng</span>
+<div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden h-9">
+<button class="px-3 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">-</button>
+<span class="px-4 font-medium border-x border-slate-200 dark:border-slate-700 h-full flex items-center">2</span>
+<button class="px-3 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">+</button>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">40.780.000₫</p>
+<p class="text-sm text-slate-500 italic">20.390.000₫ mỗi sản phẩm</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 flex flex-col sm:flex-row items-center gap-6 group relative">
+<div class="self-start sm:self-center">
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</div>
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<img alt="Sony Headphones" class="w-full h-full object-contain p-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBriZzxZlfV_2Mcqa6CJh-l3Csg4cQKUwfAKbq9YIO43LLsfq3zqKinYvYX4W3pXi8aDuruKcybMGQG5QtKGeLblUfekmJQcNLqLcdA0VpkJqpIwKEP79cqzt6hS3tr6BdTcChV4Fs1LMm2-h5I9RGBvJPJ5WeImbahGV5gVwBmsga-L01qnXfN8xhT2m1mGqxm6FUExw_-A_K8vBYQxUs2Mu1ugkkwJZ52Egz-zJE7Q41Z9rotYmViM0M8LPMEcCTIS_zQ8sN83JQ"/>
+</div>
+<div class="flex-1 w-full">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-semibold text-lg leading-tight">Tai nghe Sony WH-1000XM5</h3>
+<p class="text-sm text-slate-500 mt-1">Màu sắc: Đen</p>
+</div>
+<button class="text-slate-400 hover:text-red-500 transition-colors flex items-center gap-1 group/del">
+<span class="text-xs opacity-0 group-hover/del:opacity-100 transition-opacity">Xóa</span>
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-400">Số lượng</span>
+<div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden h-9">
+<button class="px-3 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">-</button>
+<span class="px-4 font-medium border-x border-slate-200 dark:border-slate-700 h-full flex items-center">1</span>
+<button class="px-3 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400">+</button>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">6.990.000₫</p>
+<p class="text-sm text-slate-400 line-through">8.490.000₫</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<h2 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">local_fire_department</span>
+                    Sản phẩm gợi ý cho bạn
+                </h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow cursor-pointer text-center">
+<img alt="Watch 9" class="w-full aspect-square object-contain mb-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqfE7l-kovu4YvRUeMvDZc-W-wV2V9yHEOYxlt4XwXKW-EpvSVeRvsHLamNQmw7kFa1vDrSZVA-JHXUbmMioa5neOK40sf4CfAREtaIuC5RFiBp29jHyGfRs7jyoXp-P9Rn53pVr9xboVhJy4i6phyPzZMdl0aza4hQt7v2M6ChFFp5SXZ6_TFHow2ONgdrfzZPMTKus3KzKOQbAN7vmixk9wdGsSk6a2yOq1Uwl2ZRnUmcMrVKq4VQzyoXd2pNQXa0Dx3qFfQMyJr"/>
+<h4 class="text-sm font-medium line-clamp-2">Apple Watch Series 9 GPS 41mm</h4>
+<p class="text-primary font-bold mt-2">10.290.000₫</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow cursor-pointer text-center">
+<img alt="Laptop" class="w-full aspect-square object-contain mb-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm-lKcD1ueRB10tkQC_qCe6elYHtLX90MUCAM-5N9dpcPXLrPmlAk2T-LmS4YQiUsTc_onvlhmrAxvJYTIVEwrYpPOCRj8SgF8koube_BBAcYlZoPLDfQVnH-yWyzWd-FeBr6_MzYchot4CBs9qrVzmoeeqElWm6gKWna9ZvhclvjOFA_qLzonZ3X60aOEoAmlKURoll0fCidNR0RBzq5tIdU6XlamM6uyEyB6gJbura5ZJ3Fpkrd3SfBHosJEXUo4RqPvO9myPl32"/>
+<h4 class="text-sm font-medium line-clamp-2">MacBook Air M2 8GB 256GB</h4>
+<p class="text-primary font-bold mt-2">26.490.000₫</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow cursor-pointer text-center">
+<img alt="Mouse" class="w-full aspect-square object-contain mb-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTf-xKP2HRz8_hULrIbBRh8ptF4cGd67DFVawLZUqdKgej-1kvSYmWNTYUjTXDN9Donj7rVG2abjoZ9F1xf25_DbExHsBffHQQm4gbL7jLKWNwvUXNh2r18B83Vuk6nO6fjA5iQyYkoTklX8U61J7UXYg3nEo_GCcW22pjhmHuX9VzgOYgErYEDJIzJnUTq1We_wasvtCEmOIXQXGv19rRXYsGy4ZaEJZDpLQijsJasCq2Dichasf9qXyogGuO9I19RCIJvtjf2wyW"/>
+<h4 class="text-sm font-medium line-clamp-2">Logitech MX Master 3S Wireless</h4>
+<p class="text-primary font-bold mt-2">2.490.000₫</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow cursor-pointer text-center">
+<img alt="AirPods" class="w-full aspect-square object-contain mb-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZpt5AsOUwT8TQuPebAx1IU8_vOwYlbz--OrnW1_VlJldKZ3Yxplel7Tur5QihKnhBfmT4wGf4MKvMgIpFlRAcsGCAiOdj1sU7OyntgAZX6A2YaQaX7BOlY3T6q1Lh5IgYShCBIXHrpgo2uVfKNmS3Qrnjx2Qg6vNQgWzF8uuVXwcsb8HvtHmqbl5UiB-z42kWdnWnkH7lxWTNQjdcjsW-0pBvHx1K5_0zncNJ11w26M74f0a7V4BRJC75SB0aogDQnMQ0k7EKTKpB"/>
+<h4 class="text-sm font-medium line-clamp-2">AirPods Pro (Gen 2) MagSafe USB-C</h4>
+<p class="text-primary font-bold mt-2">5.790.000₫</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/3">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 sticky top-24">
+<h2 class="text-xl font-bold mb-6">Thông tin đơn hàng</h2>
+<div class="mb-6">
+<label class="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">Mã giảm giá / Voucher</label>
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-transparent py-2 px-3 focus:ring-primary focus:border-primary" placeholder="Nhập mã giảm giá" type="text"/>
+<button class="bg-primary text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700 transition-colors whitespace-nowrap">Áp dụng</button>
+</div>
+</div>
+<div class="space-y-4 border-b border-slate-100 dark:border-slate-800 pb-6 mb-6">
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Tạm tính (3 sản phẩm)</span>
+<span>77.660.000₫</span>
+</div>
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Phí vận chuyển</span>
+<span class="text-green-500 font-medium">Miễn phí</span>
+</div>
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Giảm giá từ voucher</span>
+<span>- 0₫</span>
+</div>
+</div>
+<div class="flex justify-between items-center mb-8">
+<span class="text-lg font-bold">Tổng tiền</span>
+<div class="text-right">
+<span class="text-2xl font-bold text-primary">77.660.000₫</span>
+<p class="text-xs text-slate-400 mt-1">(Đã bao gồm VAT nếu có)</p>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-red-700 transition-transform active:scale-[0.98] shadow-lg shadow-red-200 dark:shadow-none">
+                    TIẾN HÀNH ĐẶT HÀNG
+                </button>
+<p class="text-center text-xs text-slate-400 mt-4">
+                    Hỗ trợ thanh toán: Visa, Mastercard, JCB, ATM, Momo, VNPAY, ZaloPay
+                </p>
+<div class="mt-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-dashed border-slate-300 dark:border-slate-700">
+<div class="flex items-center gap-2 text-sm font-semibold mb-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+                        Dịch vụ đi kèm
+                    </div>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+<span class="text-xs text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200">Bảo hành VIP 1 đổi 1 trong 12 tháng (+1.200.000₫)</span>
+</label>
+</div>
+</div>
+<div class="mt-4 flex justify-end">
+<button class="p-3 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-full shadow-sm hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center gap-2 text-sm" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-slate-500 dark:text-yellow-400 text-[20px]">dark_mode</span>
+<span>Đổi chế độ màu</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-16 bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 py-12">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<h5 class="font-bold mb-4 uppercase tracking-wider text-sm">Tổng đài hỗ trợ</h5>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li>Gọi mua: <span class="font-bold text-slate-900 dark:text-slate-100">1800.2097</span> (7h30 - 22h00)</li>
+<li>Khiếu nại: <span class="font-bold text-slate-900 dark:text-slate-100">1800.2063</span> (8h00 - 21h30)</li>
+<li>Bảo hành: <span class="font-bold text-slate-900 dark:text-slate-100">1800.2064</span> (8h00 - 21h00)</li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4 uppercase tracking-wider text-sm">Thông tin chính sách</h5>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li class="hover:text-primary cursor-pointer">Mua hàng và thanh toán Online</li>
+<li class="hover:text-primary cursor-pointer">Mua hàng trả góp Online</li>
+<li class="hover:text-primary cursor-pointer">Chính sách bảo hành</li>
+<li class="hover:text-primary cursor-pointer">Tra cứu hóa đơn điện tử</li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4 uppercase tracking-wider text-sm">Hệ thống cửa hàng</h5>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li class="hover:text-primary cursor-pointer">Xem danh sách 120 cửa hàng</li>
+<li class="hover:text-primary cursor-pointer">Nội quy cửa hàng</li>
+<li class="hover:text-primary cursor-pointer">Chất lượng phục vụ</li>
+<li class="hover:text-primary cursor-pointer">Chính sách bảo mật</li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4 uppercase tracking-wider text-sm">Kết nối với chúng tôi</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white" href="#"><span class="material-symbols-outlined">play_circle</span></a>
+<a class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center text-white" href="#"><span class="material-symbols-outlined">chat_bubble</span></a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-400">
+        © 2024 TechStore - Công ty TNHH Thương mại và Dịch vụ Kỹ thuật. Bảo lưu mọi quyền.
+    </div>
+</footer>
+
+</body></html>

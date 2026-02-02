@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quản Lý Người Dùng &amp; Phân Quyền | CellphoneS Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white min-h-screen">
+<div class="flex h-full min-h-screen">
+<!-- Side Navigation -->
+<aside class="w-64 border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark hidden lg:flex flex-col fixed inset-y-0">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-primary rounded-lg p-2 text-white">
+<span class="material-symbols-outlined">smartphone</span>
+</div>
+<div>
+<h1 class="text-[#111418] dark:text-white text-base font-bold leading-none">CellphoneS</h1>
+<p class="text-[#637588] text-xs font-normal mt-1">Quản trị viên</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#637588] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Bảng điều khiển</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#637588] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-sm font-medium">Sản phẩm</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#637588] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-sm font-medium">Đơn hàng</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Quản lý người dùng</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#637588] hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Cài đặt</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center" data-alt="Avatar of the logged-in admin user" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBO4hCqppPXncZ5ia-6yjFDwApH88LDc__rqLwhspOlI85j6R1Miz7XcJ6qMcVoRY_N87Uz49eyewmD1ghiwVOO4hOVQappiyCNcCOvYjSvTHwsNe12TsJk9AeF7-krsmh8PlfDOktoQozINi8CtP4lk3MNgF3NLARDSF6zYMvNv8wtUJqUX9j_tEFlDo9qqYmpvMOQVdwF9WrcFEA_yq9fT8tg5UrY4Javs70uxXINvZEh-3vR1D5vM_mn9zIwQmRV2IQBNibIZnHm')"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold truncate">Nguyễn Admin</p>
+<p class="text-xs text-[#637588] truncate">admin@cellphones.com</p>
+</div>
+<button class="text-gray-400 hover:text-gray-600">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 flex flex-col min-w-0">
+<!-- Top Navigation -->
+<header class="h-16 border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-10 px-8 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="lg:hidden text-gray-600">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-lg font-bold tracking-tight">Quản lý người dùng &amp; Phân quyền</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full"></span>
+</button>
+<button class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto w-full">
+<!-- Page Heading -->
+<div class="mb-8">
+<h1 class="text-3xl font-black tracking-tight mb-2">Danh sách người dùng</h1>
+<p class="text-[#637588] dark:text-gray-400">Quản lý thông tin, vai trò và trạng thái tài khoản của khách hàng và nhân viên trong hệ thống.</p>
+</div>
+<!-- Filters & Search -->
+<div class="bg-white dark:bg-background-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-4 mb-6">
+<div class="flex flex-col md:flex-row gap-4">
+<div class="flex-1">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-lg border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:ring-primary focus:border-primary" placeholder="Tìm kiếm theo số điện thoại hoặc email..." type="text"/>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-100 dark:bg-gray-800 text-sm font-medium hover:bg-gray-200 transition-colors">
+<span>Tất cả vai trò</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gray-100 dark:bg-gray-800 text-sm font-medium hover:bg-gray-200 transition-colors">
+<span>Trạng thái</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors">
+<span class="material-symbols-outlined">person_add</span>
+<span>Thêm người dùng</span>
+</button>
+</div>
+</div>
+</div>
+<!-- User Table -->
+<div class="bg-white dark:bg-background-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-100 dark:border-gray-800">
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Tên người dùng</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Số điện thoại</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Vai trò</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Ngày đăng ký</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Trạng thái</th>
+<th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider text-right">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+<!-- User Row 1 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm">LV</div>
+<div>
+<p class="font-semibold text-sm">Lê Văn Việt</p>
+<p class="text-xs text-[#637588]">viet.le@gmail.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">0987 654 321</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">Khách hàng</span>
+</td>
+<td class="px-6 py-4 text-sm text-[#637588]">12/05/2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="text-sm font-medium">Hoạt động</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 rounded-lg text-gray-400 hover:text-primary hover:bg-primary/10 transition-colors" title="Phân quyền">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</button>
+<button class="p-1.5 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors" title="Khóa tài khoản">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 2 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-sm">TT</div>
+<div>
+<p class="font-semibold text-sm">Trần Thanh Thảo</p>
+<p class="text-xs text-[#637588]">thao.tt@cellphones.vn</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">0912 345 678</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400">Nhân viên</span>
+</td>
+<td class="px-6 py-4 text-sm text-[#637588]">01/02/2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="text-sm font-medium">Hoạt động</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 rounded-lg text-gray-400 hover:text-primary hover:bg-primary/10 transition-colors" title="Phân quyền">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</button>
+<button class="p-1.5 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors" title="Khóa tài khoản">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 3 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm">NA</div>
+<div>
+<p class="font-semibold text-sm">Nguyễn Admin</p>
+<p class="text-xs text-[#637588]">admin@cellphones.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">0900 111 222</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400">Admin</span>
+</td>
+<td class="px-6 py-4 text-sm text-[#637588]">15/10/2022</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-green-500"></span>
+<span class="text-sm font-medium">Hoạt động</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 rounded-lg text-gray-400 hover:text-primary hover:bg-primary/10 transition-colors" title="Phân quyền">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</button>
+<button class="p-1.5 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors" title="Khóa tài khoản">
+<span class="material-symbols-outlined text-[20px]">lock_open</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User Row 4 (Locked) -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/30 transition-colors opacity-75 grayscale-[0.5]">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center font-bold text-sm">PA</div>
+<div>
+<p class="font-semibold text-sm">Phạm Anh</p>
+<p class="text-xs text-[#637588]">anh.pham@outlook.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">0888 777 666</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">Khách hàng</span>
+</td>
+<td class="px-6 py-4 text-sm text-[#637588]">20/12/2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-red-500"></span>
+<span class="text-sm font-medium text-red-500">Đã khóa</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-1.5 rounded-lg text-gray-400 hover:text-primary hover:bg-primary/10 transition-colors" title="Phân quyền">
+<span class="material-symbols-outlined text-[20px]">manage_accounts</span>
+</button>
+<button class="p-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-colors" title="Mở khóa tài khoản">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+<p class="text-sm text-[#637588]">Hiển thị 1 - 10 của 1,245 người dùng</p>
+<div class="flex gap-2">
+<button class="size-8 rounded border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="size-8 rounded bg-primary text-white flex items-center justify-center text-sm font-bold">1</button>
+<button class="size-8 rounded border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 text-sm">2</button>
+<button class="size-8 rounded border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 text-sm">3</button>
+<button class="size-8 rounded border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Role Management Info Cards -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-blue-50 dark:bg-blue-900/10 p-6 rounded-xl border border-blue-100 dark:border-blue-800/50">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-blue-600">shield_person</span>
+<h3 class="font-bold text-blue-900 dark:text-blue-300">Admin (Quản trị)</h3>
+</div>
+<p class="text-sm text-blue-700 dark:text-blue-400">Toàn quyền truy cập hệ thống: quản lý sản phẩm, đơn hàng, người dùng và cài đặt bảo mật.</p>
+</div>
+<div class="bg-orange-50 dark:bg-orange-900/10 p-6 rounded-xl border border-orange-100 dark:border-orange-800/50">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-orange-600">support_agent</span>
+<h3 class="font-bold text-orange-900 dark:text-orange-300">Staff (Nhân viên)</h3>
+</div>
+<p class="text-sm text-orange-700 dark:text-orange-400">Quyền xử lý đơn hàng, cập nhật trạng thái sản phẩm và hỗ trợ thông tin khách hàng.</p>
+</div>
+<div class="bg-green-50 dark:bg-green-900/10 p-6 rounded-xl border border-green-100 dark:border-green-800/50">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-green-600">person</span>
+<h3 class="font-bold text-green-900 dark:text-green-300">Customer (Khách hàng)</h3>
+</div>
+<p class="text-sm text-green-700 dark:text-green-400">Tài khoản mua hàng tiêu chuẩn. Có quyền xem lịch sử mua hàng và thông tin cá nhân.</p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto py-6 px-8 border-t border-gray-100 dark:border-gray-800 text-center">
+<p class="text-xs text-[#637588]">© 2024 CellphoneS Admin Portal. Hệ thống quản lý nội bộ.</p>
+</footer>
+</main>
+</div>
+<!-- Quick Tooltip/Action Overlay Mock (Hidden by default, used for demonstration style) -->
+<div class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4" id="role-modal">
+<div class="bg-white dark:bg-background-dark rounded-2xl w-full max-w-md shadow-2xl border border-gray-200 dark:border-gray-700">
+<div class="p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
+<h3 class="text-xl font-bold">Phân quyền người dùng</h3>
+<button class="text-gray-400 hover:text-gray-600"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div class="p-6">
+<div class="mb-6 flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl">
+<div class="size-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">LV</div>
+<div>
+<p class="font-bold text-lg">Lê Văn Việt</p>
+<p class="text-sm text-[#637588]">viet.le@gmail.com</p>
+</div>
+</div>
+<div class="space-y-4">
+<label class="block">
+<span class="text-sm font-semibold mb-2 block">Chọn vai trò hệ thống</span>
+<select class="w-full rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-primary">
+<option>Khách hàng (Mặc định)</option>
+<option>Nhân viên kho</option>
+<option>Nhân viên bán hàng</option>
+<option>Quản trị viên (Admin)</option>
+</select>
+</label>
+<div class="pt-4 flex flex-col gap-3">
+<button class="w-full py-3 rounded-xl bg-primary text-white font-bold hover:bg-blue-600 transition-colors">Cập nhật quyền hạn</button>
+<button class="w-full py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold hover:bg-gray-200 transition-colors">Hủy bỏ</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

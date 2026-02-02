@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Đánh Giá Sản Phẩm - CellphoneS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#d70018",
+                        "background-light": "#f4f6f8",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Inter', sans-serif; }
+        .modal-overlay { background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .filled { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-5xl mx-auto px-4 py-12">
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-6 mb-8">
+<h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">reviews</span>
+                Đánh giá &amp; Nhận xét
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-200 dark:border-slate-800 pb-8 md:pb-0">
+<div class="text-5xl font-extrabold text-primary mb-2">4.8/5</div>
+<div class="flex text-yellow-400 mb-2">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined">star_half</span>
+</div>
+<p class="text-sm font-medium text-green-600 dark:text-green-400 mb-1">95% Khách hàng hài lòng</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Dựa trên 124 đánh giá</p>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 text-sm">
+<span class="w-12 flex items-center gap-1 font-medium">5 <span class="material-symbols-outlined text-[14px] filled">star</span></span>
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 85%"></div>
+</div>
+<span class="w-10 text-right text-slate-500">85%</span>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<span class="w-12 flex items-center gap-1 font-medium">4 <span class="material-symbols-outlined text-[14px] filled">star</span></span>
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 10%"></div>
+</div>
+<span class="w-10 text-right text-slate-500">10%</span>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<span class="w-12 flex items-center gap-1 font-medium">3 <span class="material-symbols-outlined text-[14px] filled">star</span></span>
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 3%"></div>
+</div>
+<span class="w-10 text-right text-slate-500">3%</span>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<span class="w-12 flex items-center gap-1 font-medium">2 <span class="material-symbols-outlined text-[14px] filled">star</span></span>
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 10%"></div>
+</div>
+<span class="w-10 text-right text-slate-500">1%</span>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<span class="w-12 flex items-center gap-1 font-medium">1 <span class="material-symbols-outlined text-[14px] filled">star</span></span>
+<div class="flex-1 h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 1%"></div>
+</div>
+<span class="w-10 text-right text-slate-500">1%</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center text-center px-4">
+<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Bạn đã sử dụng sản phẩm này? Hãy chia sẻ cảm nhận của mình nhé.</p>
+<button class="bg-primary hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg transition-all flex items-center gap-2 shadow-md" onclick="toggleModal(true)">
+<span class="material-symbols-outlined">edit_square</span>
+                        Viết đánh giá của bạn
+                    </button>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-white dark:bg-slate-900 border border-primary text-primary rounded-full text-sm font-medium">Tất cả</button>
+<button class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium hover:border-primary">Có hình ảnh</button>
+<button class="px-4 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium hover:border-primary">Chỉ 5 sao</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-500">Sắp xếp:</span>
+<select class="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 rounded-lg text-sm focus:ring-primary focus:border-primary">
+<option>Mới nhất</option>
+<option>Đánh giá cao</option>
+<option>Hữu ích nhất</option>
+</select>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-slate-500 dark:text-slate-400">
+                            AN
+                        </div>
+<div>
+<div class="font-semibold flex items-center gap-2">
+                                Alex Nguyen
+                                <span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] filled">verified</span> Người mua đã xác nhận
+                                </span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Đánh giá 2 ngày trước</p>
+</div>
+</div>
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-[20px] filled">star</span>
+<span class="material-symbols-outlined text-[20px] filled">star</span>
+<span class="material-symbols-outlined text-[20px] filled">star</span>
+<span class="material-symbols-outlined text-[20px] filled">star</span>
+<span class="material-symbols-outlined text-[20px] filled">star</span>
+</div>
+</div>
+<div class="mb-4">
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+                        Sản phẩm tuyệt vời. Camera thực sự rất ấn tượng, vượt xa các dòng máy mình từng dùng. Giao hàng cực nhanh. Rất khuyên dùng cho những ai đam mê chụp ảnh!
+                    </p>
+</div>
+<div class="flex gap-2 mb-4 overflow-x-auto pb-2">
+<img alt="Product user photo" class="w-20 h-20 object-cover rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:opacity-90 transition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0EwhhnTLQudL891zXAkZZe7O9TIXrFxDjWcf_8u_fkmUj14x4PI2XeKbCku1eFLiMkCoYCY3K3i7elFKFgwiUQag_Y37tCVEW1FubqQOkImHmK8K9BqxyYp2u_BRNgD6-6fTxY0KdFCF50IakTt7bd5DGxlWT_44wtZlTwG9HOKa-0i-vFDuQE1gk4qv5wKRgu2DUlg17xcYECvqgQZOqN3aM7rAq1riES-0DC8vCC1Jj8JPAwf72BRe4mh9DPBdPbFbK7HtJH2jD"/>
+<img alt="Product user photo" class="w-20 h-20 object-cover rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:opacity-90 transition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-kslasgcXeh94R3yB9bLisFNwkilKnDRJmbVBu2M--382nXbxISbCw87gbE-v9iRuJoCcfhduffuKF32Pvzv8w0whi6P58KK2iK5QqdAwXwlBJoYOY41O9IPmaCE2S1CAO-FmEaoQOxAtQUcgJPVmzG9ni5x1YxVP6GrsVHodVXxCt2tnaaKXH7pHbds0Nb8jWeW3dNNISbFAtCZVqhnhGM6g2yp7wA1vRGRmeYeyAZu6NKjSgQz_YptgyQdYqjTXqge_HfMH5rBf"/>
+</div>
+<div class="flex items-center gap-4 text-sm text-slate-500">
+<button class="flex items-center gap-1 hover:text-primary transition">
+<span class="material-symbols-outlined text-[18px]">thumb_up</span> Hữu ích (12)
+                    </button>
+<button class="flex items-center gap-1 hover:text-primary transition">
+<span class="material-symbols-outlined text-[18px]">reply</span> Trả lời
+                    </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-slate-500 dark:text-slate-400">
+                            MP
+                        </div>
+<div>
+<div class="font-semibold flex items-center gap-2">
+                                Minh Pham
+                                <span class="bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] filled">verified</span> Người mua đã xác nhận
+                                </span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Đánh giá 1 tuần trước</p>
+</div>
+</div>
+<div class="flex text-yellow-400">
+<span class="material-symbols-outlined text-[20px] filled">star</span>
+<span class="material-symbols-outlined text-[20px] filled">star</span>
+<span class="material-symbols-outlined text-[20px] filled">star</span>
+<span class="material-symbols-outlined text-[20px] filled">star</span>
+<span class="material-symbols-outlined text-[20px]">star</span>
+</div>
+</div>
+<div class="mb-4">
+<p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+                        Pin khá ổn, nhưng mình kỳ vọng nhiều hơn một chút ở mức giá này. Tổng quan là một thiết bị tốt, màn hình rất đẹp.
+                    </p>
+</div>
+<div class="flex items-center gap-4 text-sm text-slate-500">
+<button class="flex items-center gap-1 hover:text-primary transition">
+<span class="material-symbols-outlined text-[18px]">thumb_up</span> Hữu ích (4)
+                    </button>
+<button class="flex items-center gap-1 hover:text-primary transition">
+<span class="material-symbols-outlined text-[18px]">reply</span> Trả lời
+                    </button>
+</div>
+<div class="mt-4 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border-l-4 border-primary">
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold text-xs text-primary uppercase">Phản hồi từ quản trị viên</span>
+<span class="text-[10px] text-slate-400">• 6 ngày trước</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-400">
+                        Cảm ơn phản hồi của bạn, Minh! Bạn có thể thử kiểm tra cài đặt tối ưu hóa pin trong menu hiển thị để tăng thêm thời gian sử dụng màn hình nhé.
+                    </p>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center">
+<button class="px-8 py-2 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-800 transition-colors font-medium">
+                Xem thêm bình luận
+            </button>
+</div>
+</div>
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" id="reviewModal">
+<div class="modal-overlay absolute inset-0" onclick="toggleModal(false)"></div>
+<div class="bg-white dark:bg-slate-900 w-full max-w-lg rounded-2xl shadow-2xl relative z-10 overflow-hidden transform transition-all">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
+<h3 class="text-lg font-bold">Viết đánh giá của bạn</h3>
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition" onclick="toggleModal(false)">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="p-6 space-y-6">
+<div>
+<label class="block text-sm font-semibold mb-3">Xếp hạng</label>
+<div class="flex gap-2">
+<button class="star-btn text-slate-300 hover:text-yellow-400 transition transform hover:scale-110" onclick="setStar(1)" type="button"><span class="material-symbols-outlined text-3xl">star</span></button>
+<button class="star-btn text-slate-300 hover:text-yellow-400 transition transform hover:scale-110" onclick="setStar(2)" type="button"><span class="material-symbols-outlined text-3xl">star</span></button>
+<button class="star-btn text-slate-300 hover:text-yellow-400 transition transform hover:scale-110" onclick="setStar(3)" type="button"><span class="material-symbols-outlined text-3xl">star</span></button>
+<button class="star-btn text-slate-300 hover:text-yellow-400 transition transform hover:scale-110" onclick="setStar(4)" type="button"><span class="material-symbols-outlined text-3xl">star</span></button>
+<button class="star-btn text-slate-300 hover:text-yellow-400 transition transform hover:scale-110" onclick="setStar(5)" type="button"><span class="material-symbols-outlined text-3xl">star</span></button>
+</div>
+<p class="text-xs mt-2 text-slate-500" id="starHint">Vui lòng chọn mức độ đánh giá</p>
+</div>
+<div>
+<label class="block text-sm font-semibold mb-2" for="review-text">Nội dung đánh giá</label>
+<textarea class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl p-3 text-sm focus:ring-primary focus:border-primary" id="review-text" placeholder="Hãy chia sẻ trải nghiệm của bạn về sản phẩm..." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-sm font-semibold mb-2">Thêm hình ảnh (Không bắt buộc)</label>
+<div class="flex items-center justify-center w-full">
+<label class="flex flex-col items-center justify-center w-full h-32 border-2 border-slate-200 dark:border-slate-700 border-dashed rounded-xl cursor-pointer bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+<div class="flex flex-col items-center justify-center pt-5 pb-6">
+<span class="material-symbols-outlined text-slate-400 mb-2">add_a_photo</span>
+<p class="text-xs text-slate-500 dark:text-slate-400">Nhấn để tải ảnh lên (Tối đa 5 ảnh)</p>
+</div>
+<input class="hidden" multiple="" type="file"/>
+</label>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-red-700 text-white font-bold py-3 rounded-xl transition shadow-lg" type="submit">
+                    Gửi đánh giá
+                </button>
+<p class="text-[10px] text-center text-slate-400 uppercase tracking-widest">Đánh giá của bạn sẽ được hiển thị công khai</p>
+</form>
+</div>
+</div>
+<script>
+        function toggleModal(show) {
+            const modal = document.getElementById('reviewModal');
+            if (show) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        function setStar(rating) {
+            const stars = document.querySelectorAll('.star-btn');
+            stars.forEach((star, index) => {
+                const icon = star.querySelector('.material-symbols-outlined');
+                if (index < rating) {
+                    star.classList.add('text-yellow-400');
+                    star.classList.remove('text-slate-300');
+                    icon.classList.add('filled');
+                } else {
+                    star.classList.remove('text-yellow-400');
+                    star.classList.add('text-slate-300');
+                    icon.classList.remove('filled');
+                }
+            });
+            const hints = ["Rất kém", "Kém", "Bình thường", "Tốt", "Tuyệt vời"];
+            document.getElementById('starHint').innerText = hints[rating - 1];
+            document.getElementById('starHint').classList.add('text-primary');
+            document.getElementById('starHint').classList.remove('text-slate-500');
+        }
+    </script>
+
+</body></html>

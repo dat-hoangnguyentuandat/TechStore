@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quản Lý Danh Sách Sản Phẩm | CellphoneS Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "brand-red": "#e11b22",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white transition-colors duration-200">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 bg-white dark:bg-[#1a242f] border-r border-[#e5e7eb] dark:border-[#2d3748] sticky top-0 h-screen hidden md:flex flex-col justify-between p-4">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-brand-red rounded-lg size-10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">smartphone</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#111418] dark:text-white text-base font-bold leading-none">CellphoneS</h1>
+<p class="text-[#637588] dark:text-[#a0aec0] text-xs font-normal mt-1">Quản trị hệ thống</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-[#a0aec0] hover:bg-background-light dark:hover:bg-[#2d3748] transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">inventory_2</span>
+<span class="text-sm font-medium">Sản phẩm</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-[#a0aec0] hover:bg-background-light dark:hover:bg-[#2d3748] transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-sm font-medium">Đơn hàng</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-[#a0aec0] hover:bg-background-light dark:hover:bg-[#2d3748] transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Khách hàng</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-[#a0aec0] hover:bg-background-light dark:hover:bg-[#2d3748] transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Báo cáo</span>
+</a>
+<div class="my-2 border-t border-[#e5e7eb] dark:border-[#2d3748]"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-[#a0aec0] hover:bg-background-light dark:hover:bg-[#2d3748] transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Cài đặt</span>
+</a>
+</nav>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-xl bg-background-light dark:bg-[#2d3748]">
+<div class="size-8 rounded-full bg-cover bg-center" data-alt="Avatar của người quản trị" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkk4Xo5dEgb5u4B9v8Dr0Hyd3yULfNRGsnwx0Znbd0FWGlhi1ozIubfFxfI9XTSGrDO9UnCukzpeOnbLUoqgYQzAD8U9PIro4OYjmikfCbbS9rfo2Sai4wpFMpZr4lg32QuoDtRNjjneZCylMVWfpv01yEl09Q9FPVwUtE0gjCQ5wmuZsJympNuZm5EhqPt7aeh1gtE0XF3yjGOn8SInLdby64KRBaXLffruLKZqQkGymT05ZUiQSk6-GlM2_9ZhEIPmirbYas5pJi')"></div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold truncate">Admin User</p>
+<p class="text-[10px] text-[#637588] dark:text-[#a0aec0] truncate">admin@cellphones.com</p>
+</div>
+<span class="material-symbols-outlined text-sm text-[#637588]">logout</span>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<!-- Breadcrumbs -->
+<div class="px-8 pt-6">
+<div class="flex items-center gap-2 text-sm">
+<a class="text-[#637588] dark:text-[#a0aec0] hover:text-primary transition-colors" href="#">Trang chủ</a>
+<span class="material-symbols-outlined text-xs text-[#637588]">chevron_right</span>
+<span class="text-[#111418] dark:text-white font-medium">Quản lý sản phẩm</span>
+</div>
+</div>
+<!-- PageHeading -->
+<div class="px-8 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-3xl font-black tracking-tight text-[#111418] dark:text-white">Quản Lý Sản Phẩm</h2>
+<p class="text-[#637588] dark:text-[#a0aec0] mt-1">Quản lý thông tin, giá cả và tồn kho các mặt hàng của CellphoneS.</p>
+</div>
+<button class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-red-700 text-white text-sm font-bold rounded-xl shadow-lg shadow-brand-red/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-xl">add_circle</span>
+<span>Thêm sản phẩm mới</span>
+</button>
+</div>
+<!-- Filters and Search -->
+<div class="px-8 mb-6 flex flex-col lg:flex-row gap-4">
+<!-- SearchBar -->
+<div class="flex-1">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[#637588] group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3 bg-white dark:bg-[#1a242f] border border-[#e5e7eb] dark:border-[#2d3748] rounded-xl text-sm focus:ring-2 focus:ring-primary focus:border-primary placeholder:text-[#637588] dark:placeholder:text-[#a0aec0] transition-all" placeholder="Tìm kiếm theo tên sản phẩm, mã ID, thương hiệu..." type="text"/>
+</div>
+</div>
+<!-- Chips / Category Filters -->
+<div class="flex flex-wrap gap-2 items-center">
+<div class="h-8 w-px bg-[#e5e7eb] dark:border-[#2d3748] mx-2 hidden lg:block"></div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-full">
+                        Tất cả
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1a242f] border border-[#e5e7eb] dark:border-[#2d3748] hover:border-primary text-[#637588] dark:text-[#a0aec0] text-xs font-semibold rounded-full transition-colors">
+                        Điện thoại
+                        <span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1a242f] border border-[#e5e7eb] dark:border-[#2d3748] hover:border-primary text-[#637588] dark:text-[#a0aec0] text-xs font-semibold rounded-full transition-colors">
+                        Laptop
+                        <span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-[#1a242f] border border-[#e5e7eb] dark:border-[#2d3748] hover:border-primary text-[#637588] dark:text-[#a0aec0] text-xs font-semibold rounded-full transition-colors">
+                        Phụ kiện
+                        <span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Product Table -->
+<div class="px-8 pb-8 flex-1 overflow-auto">
+<div class="bg-white dark:bg-[#1a242f] rounded-2xl border border-[#e5e7eb] dark:border-[#2d3748] shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#fcfcfd] dark:bg-[#232d3b] border-b border-[#e5e7eb] dark:border-[#2d3748]">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#637588] dark:text-[#a0aec0]">ID</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#637588] dark:text-[#a0aec0]">Sản phẩm</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#637588] dark:text-[#a0aec0]">Hãng</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#637588] dark:text-[#a0aec0]">Giá bán</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#637588] dark:text-[#a0aec0]">Tồn kho</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#637588] dark:text-[#a0aec0]">Trạng thái</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-[#637588] dark:text-[#a0aec0] text-right">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e5e7eb] dark:divide-[#2d3748]">
+<!-- Row 1 -->
+<tr class="hover:bg-background-light dark:hover:bg-[#232d3b] transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#637588] dark:text-[#a0aec0]">#CPS-9021</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 bg-background-light dark:bg-[#2d3748] rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Hình ảnh iPhone 15 Pro Max màu titan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhhq79zfGL-m1gIsiXdODCrHcS942TSYbX-yDijsLQc3LW45CkIW41L2zqDB-Xt5GY6jBBlDiq7Wb1Lt1dKzZNJuDe11XWLQsf08VxEiTuvs8ve5VdbgCqAUXbLI2Lz3bk4b2jjLp18jYbBorM2ZDSv9SOZHq8_Gl2KUAHffm1LiT2alWkOxNyVlzCp4m-8SiRYVIc7I3ixbLSOevWbpK95jEbgxfP7Ep9LDtU5u5_J52RnYTB-RoD74C_3K18537WRtoOqPSz9W7n"/>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111418] dark:text-white line-clamp-1">iPhone 15 Pro Max 256GB</p>
+<p class="text-[11px] text-[#637588] dark:text-[#a0aec0]">Màu Titan Tự Nhiên</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">Apple</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">29.990.000₫</td>
+<td class="px-6 py-4 text-sm">42</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                                        Còn hàng
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Sửa">
+<span class="material-symbols-outlined text-lg leading-none">edit_note</span>
+</button>
+<button class="p-2 hover:bg-brand-red/10 text-brand-red rounded-lg transition-colors" title="Xóa">
+<span class="material-symbols-outlined text-lg leading-none">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-background-light dark:hover:bg-[#232d3b] transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#637588] dark:text-[#a0aec0]">#CPS-4412</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 bg-background-light dark:bg-[#2d3748] rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Hình ảnh Samsung Galaxy S24 Ultra" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3DVxbWqthfYS9n0Orhn2sDvXplXEs9ugFaMTlEcO5Uri6LMBFYwxT_cGfWTUxuepJ6ZK8WrRw8dyvCWpNODuDJqJkLTcoDocJfGy_8RZlw6e9DS00gSG9Xt6eDnd5mjrFEfuvznejWv83KPyDbErjzBOsvjqh4cslVKXGypfo2J0tMXtd16gUh5QB37B1JhNV9DxPB6dDjde6OwLm43ygRAp2dndET54BAobeLkU1CvVp3KwLyt3J-CxDn6Bb-aSLY94KCZLJbdsT"/>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111418] dark:text-white line-clamp-1">Samsung Galaxy S24 Ultra</p>
+<p class="text-[11px] text-[#637588] dark:text-[#a0aec0]">12GB | 512GB</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">Samsung</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">26.490.000₫</td>
+<td class="px-6 py-4 text-sm">18</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                                        Còn hàng
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Sửa">
+<span class="material-symbols-outlined text-lg leading-none">edit_note</span>
+</button>
+<button class="p-2 hover:bg-brand-red/10 text-brand-red rounded-lg transition-colors" title="Xóa">
+<span class="material-symbols-outlined text-lg leading-none">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-background-light dark:hover:bg-[#232d3b] transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#637588] dark:text-[#a0aec0]">#CPS-1108</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 bg-background-light dark:bg-[#2d3748] rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Hình ảnh MacBook Air M2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVOfW3AGw6XBDKnEDpVpmNsrOjYbrFWInMqzceRmNwWfvI5KCYXq6WY3vU6EjN3wTfNz8_Wxwuv7olip5o8Yc-ZP8oeGe8jnRh4LJix6BPS9ujrWLjA2clVSpPAbv4Zg6xf43hi_GPjS2pmvvKggDnX1AGxHUTLs5L7qV3VzDVpT1DhLAzuAprzIacwci7atAfgNhHVxrr2UhrJrDcxibUIXhtGKOPg4iz6DZxZ41Wb3qJox3uPKXstekI-Ncwm9HVPiphE3jtMRwq"/>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111418] dark:text-white line-clamp-1">MacBook Air M2 13-inch</p>
+<p class="text-[11px] text-[#637588] dark:text-[#a0aec0]">8GB | 256GB SSD</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">Apple</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">24.590.000₫</td>
+<td class="px-6 py-4 text-sm text-brand-red font-bold italic">0</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-400">
+                                        Hết hàng
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Sửa">
+<span class="material-symbols-outlined text-lg leading-none">edit_note</span>
+</button>
+<button class="p-2 hover:bg-brand-red/10 text-brand-red rounded-lg transition-colors" title="Xóa">
+<span class="material-symbols-outlined text-lg leading-none">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-background-light dark:hover:bg-[#232d3b] transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#637588] dark:text-[#a0aec0]">#CPS-7723</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 bg-background-light dark:bg-[#2d3748] rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Hình ảnh iPad Pro M2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_fs9NmOxz22GSxGAbyWYClXUBWMRArHdI8XKJaN-HC6BdhBoPSElk3gaw62Bt1PaC1HKQqe7pFsif8AqZchNUPvZ3Ic-9yrUiAkY0s4aD8BlsLuwpeovwrkxIewEJvtq3RvfG0aE0geVJHxHE9kJYYUgclPmR7MowgInzQYjZAWNC5T65leEdnEVdV-opzdJa3m4J2sTSsE4PIGVExbmviG1TD9xk4PRfYkMjeqtAgJ5rlNM9YX-OLdMYCXYF5qduf1TXn-J2TJVP"/>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111418] dark:text-white line-clamp-1">iPad Pro 11 inch M2 WiFi</p>
+<p class="text-[11px] text-[#637588] dark:text-[#a0aec0]">128GB Space Gray</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">Apple</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">19.290.000₫</td>
+<td class="px-6 py-4 text-sm font-medium text-orange-500">4</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                                        Còn hàng
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Sửa">
+<span class="material-symbols-outlined text-lg leading-none">edit_note</span>
+</button>
+<button class="p-2 hover:bg-brand-red/10 text-brand-red rounded-lg transition-colors" title="Xóa">
+<span class="material-symbols-outlined text-lg leading-none">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-background-light dark:hover:bg-[#232d3b] transition-colors group">
+<td class="px-6 py-4 text-sm font-medium text-[#637588] dark:text-[#a0aec0]">#CPS-3110</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-12 bg-background-light dark:bg-[#2d3748] rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Hình ảnh Laptop ASUS Vivobook" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMBpofraG6LzKW-sEq7Cu8--u5qGVcui-dHGalhV5C1IJl9shNxlpKgWmNdHbQwaOFRJs9uAQ3EMUQwZyU_DIzySRZPzcXT7gjB6ZaZjaZLNNpqggg3D2DxS0-BJ4SRNrWgD3dahvTfEiOEMIrocbmSubHujkcMqd6SLJ5AzzvJ-gqqArg-lch2Qp1044W4zenx6auSMGUvWFy8g-X3aZTqfBik0-f0swn5NL1WE92gxpex52Hgej4_lCtISJ1alrgvhWYX88P9PTX"/>
+</div>
+<div>
+<p class="text-sm font-bold text-[#111418] dark:text-white line-clamp-1">ASUS Vivobook 14 OLED</p>
+<p class="text-[11px] text-[#637588] dark:text-[#a0aec0]">Core i5 | 16GB | 512GB</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium">ASUS</td>
+<td class="px-6 py-4 text-sm font-bold text-primary">15.490.000₫</td>
+<td class="px-6 py-4 text-sm">25</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">
+                                        Còn hàng
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 hover:bg-primary/10 text-primary rounded-lg transition-colors" title="Sửa">
+<span class="material-symbols-outlined text-lg leading-none">edit_note</span>
+</button>
+<button class="p-2 hover:bg-brand-red/10 text-brand-red rounded-lg transition-colors" title="Xóa">
+<span class="material-symbols-outlined text-lg leading-none">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-6 py-4 flex items-center justify-between border-t border-[#e5e7eb] dark:border-[#2d3748] bg-white dark:bg-[#1a242f]">
+<p class="text-xs text-[#637588] dark:text-[#a0aec0]">Đang hiển thị <span class="font-bold text-[#111418] dark:text-white">1 - 5</span> trên tổng số <span class="font-bold text-[#111418] dark:text-white">128</span> sản phẩm</p>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg border border-[#e5e7eb] dark:border-[#2d3748] text-[#637588] hover:bg-background-light dark:hover:bg-[#2d3748] disabled:opacity-50 disabled:cursor-not-allowed">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<button class="size-8 rounded-lg bg-primary text-white text-xs font-bold">1</button>
+<button class="size-8 rounded-lg text-xs font-medium hover:bg-background-light dark:hover:bg-[#2d3748]">2</button>
+<button class="size-8 rounded-lg text-xs font-medium hover:bg-background-light dark:hover:bg-[#2d3748]">3</button>
+<span class="px-1 text-[#637588]">...</span>
+<button class="size-8 rounded-lg text-xs font-medium hover:bg-background-light dark:hover:bg-[#2d3748]">26</button>
+<button class="p-1.5 rounded-lg border border-[#e5e7eb] dark:border-[#2d3748] text-[#637588] hover:bg-background-light dark:hover:bg-[#2d3748]">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

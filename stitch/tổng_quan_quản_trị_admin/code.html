@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tổng Quan Quản Trị Admin - CellphoneS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d70018", // Using CellphoneS characteristic red as primary
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111418] dark:text-white antialiased">
+<div class="flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-72 bg-white dark:bg-[#1a232e] border-r border-[#dce0e5] dark:border-[#2d3748] flex flex-col fixed h-full z-10">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary size-10 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">smartphone</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#111418] dark:text-white text-base font-bold leading-tight">CellphoneS Admin</h1>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">Hệ thống quản trị</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-2 space-y-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-[#2d3748] cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+<p class="text-sm font-medium">Quản lý sản phẩm</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-[#2d3748] cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+<p class="text-sm font-medium">Đơn hàng</p>
+<span class="ml-auto bg-primary text-white text-[10px] px-1.5 py-0.5 rounded-full">12</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-[#2d3748] cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[24px]">group</span>
+<p class="text-sm font-medium">Người dùng</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-[#2d3748] cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[24px]">sell</span>
+<p class="text-sm font-medium">Khuyến mãi</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:bg-primary/20 cursor-pointer">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1">bar_chart</span>
+<p class="text-sm font-bold">Thống kê</p>
+</div>
+</nav>
+<div class="p-4 border-t border-[#dce0e5] dark:border-[#2d3748]">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#637588] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-[#2d3748] cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<p class="text-sm font-medium">Cài đặt</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-72 p-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div>
+<h2 class="text-[#111418] dark:text-white text-3xl font-black leading-tight tracking-tight">Tổng Quan Quản Trị Admin</h2>
+<p class="text-[#637588] dark:text-gray-400 text-sm mt-1">Cập nhật lúc: 14:30 - 24/05/2024</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 h-10 bg-white dark:bg-[#1a232e] border border-[#dce0e5] dark:border-[#2d3748] rounded-lg text-[#111418] dark:text-white text-sm font-bold hover:bg-[#f0f2f4] transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>7 ngày qua</span>
+</button>
+<button class="flex items-center gap-2 px-4 h-10 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-lg">description</span>
+<span>Xuất báo cáo Excel</span>
+</button>
+</div>
+</div>
+<!-- Stats Overview -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="bg-white dark:bg-[#1a232e] p-6 rounded-xl border border-[#dce0e5] dark:border-[#2d3748] shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-[#637588] dark:text-gray-400 text-sm font-medium">Tổng doanh thu</p>
+<span class="material-symbols-outlined text-green-500 text-xl">payments</span>
+</div>
+<p class="text-[#111418] dark:text-white text-2xl font-bold">1.250.000.000đ</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="text-[#078838] text-xs font-bold">+12.5%</span>
+<span class="text-[#637588] dark:text-gray-400 text-[10px]">so với tháng trước</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a232e] p-6 rounded-xl border border-[#dce0e5] dark:border-[#2d3748] shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-[#637588] dark:text-gray-400 text-sm font-medium">Đơn hàng mới</p>
+<span class="material-symbols-outlined text-blue-500 text-xl">shopping_bag</span>
+</div>
+<p class="text-[#111418] dark:text-white text-2xl font-bold">128</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="text-[#078838] text-xs font-bold">+8.2%</span>
+<span class="text-[#637588] dark:text-gray-400 text-[10px]">so với hôm qua</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a232e] p-6 rounded-xl border border-[#dce0e5] dark:border-[#2d3748] shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-[#637588] dark:text-gray-400 text-sm font-medium">Sắp hết hàng</p>
+<span class="material-symbols-outlined text-red-500 text-xl">warning</span>
+</div>
+<p class="text-[#111418] dark:text-white text-2xl font-bold">15</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="text-[#e73908] text-xs font-bold">-5.1%</span>
+<span class="text-[#637588] dark:text-gray-400 text-[10px]">trong 24h qua</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a232e] p-6 rounded-xl border border-[#dce0e5] dark:border-[#2d3748] shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-[#637588] dark:text-gray-400 text-sm font-medium">Active Users</p>
+<span class="material-symbols-outlined text-purple-500 text-xl">person_search</span>
+</div>
+<p class="text-[#111418] dark:text-white text-2xl font-bold">3.420</p>
+<div class="mt-2 flex items-center gap-1">
+<span class="text-[#078838] text-xs font-bold">+2.4%</span>
+<span class="text-[#637588] dark:text-gray-400 text-[10px]">thời gian thực</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Revenue Chart -->
+<div class="lg:col-span-2 bg-white dark:bg-[#1a232e] p-6 rounded-xl border border-[#dce0e5] dark:border-[#2d3748] shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<div>
+<p class="text-[#111418] dark:text-white text-lg font-bold">Doanh thu theo thời gian</p>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-normal">Biểu đồ doanh thu tuần này</p>
+</div>
+<div class="text-right">
+<p class="text-[#111418] dark:text-white text-xl font-black">1.25B</p>
+<p class="text-[#078838] text-xs font-medium">+15%</p>
+</div>
+</div>
+<div class="h-[250px] w-full mt-4">
+<svg fill="none" height="100%" preserveaspectratio="none" viewbox="0 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#revenue_gradient)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#d70018" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="revenue_gradient" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#d70018" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#d70018" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-between mt-4 px-2">
+<p class="text-[#637588] text-[11px] font-bold">Thứ 2</p>
+<p class="text-[#637588] text-[11px] font-bold">Thứ 3</p>
+<p class="text-[#637588] text-[11px] font-bold">Thứ 4</p>
+<p class="text-[#637588] text-[11px] font-bold">Thứ 5</p>
+<p class="text-[#637588] text-[11px] font-bold">Thứ 6</p>
+<p class="text-[#637588] text-[11px] font-bold">Thứ 7</p>
+<p class="text-[#637588] text-[11px] font-bold">CN</p>
+</div>
+</div>
+</div>
+<!-- Products Low Stock List -->
+<div class="bg-white dark:bg-[#1a232e] rounded-xl border border-[#dce0e5] dark:border-[#2d3748] shadow-sm flex flex-col">
+<div class="p-6 border-b border-[#dce0e5] dark:border-[#2d3748]">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Sản phẩm sắp hết hàng</h3>
+<p class="text-[#637588] dark:text-gray-400 text-xs">Cần nhập kho ngay lập tức</p>
+</div>
+<div class="flex-1 overflow-y-auto max-h-[320px]">
+<!-- Product Item -->
+<div class="flex items-center gap-4 p-4 border-b border-[#f0f2f4] dark:border-[#2d3748] last:border-0">
+<div class="size-12 rounded-lg bg-cover bg-center" data-alt="iPhone 15 Pro Max Natural Titanium" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0SWTfX_LjRAK8xekCTLFUdFpckRHpwgsTtNhqgZd8VE9NaZU0Rns17l-8GprZLY1ZeYYcHiUK2_O8XCZcu7FiZJ7N8Kdje-k9xKxjqZ6WuVCNnvRN8UonpJco5DmLOT8hCzQTW8EnM0ASMiFwDZH5JavvExG8UKjDqaYCmI9pMv9EfNupxNRQUycgKY78Ibg0bZis59FDILHg-gJ3X9XKDqNLManNbC_KXrjVxvaUrSwVZVAb6U8CW48uYO9r2IBh8otOtnLsaFkx');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-[#111418] dark:text-white truncate">iPhone 15 Pro Max 256GB</p>
+<p class="text-xs text-[#637588] dark:text-gray-400">Tồn kho: <span class="text-primary font-bold">2</span></p>
+</div>
+<button class="size-8 rounded-lg bg-[#f0f2f4] dark:bg-[#2d3748] flex items-center justify-center hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<!-- Product Item -->
+<div class="flex items-center gap-4 p-4 border-b border-[#f0f2f4] dark:border-[#2d3748] last:border-0">
+<div class="size-12 rounded-lg bg-cover bg-center" data-alt="Samsung Galaxy S24 Ultra Gray" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACIK7RSqcOH5q-GfQmP-y1pibMrSByfbN5EaEEz6VT96EXUgAqvIkVXsOi6pvfpPttbjJQVYGwk-t_NdC161do0mCGrryCKKO9moy5xvE3BxCzScJruTe3yzaiM98MPcnRGiKDDxqpf0GfVqs_Np06r7pYbVOtUPrEee8qhdj3FWJcBoMUI-TQkEOTKsjEo-uFVq2FXfFcBOJEBhR0vpF0EkTzchHCEYQ8UDMQf13dy6YFmR7nCtRUCeE9gVCMA9MCC0RkoCYDGftX');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-[#111418] dark:text-white truncate">Samsung Galaxy S24 Ultra</p>
+<p class="text-xs text-[#637588] dark:text-gray-400">Tồn kho: <span class="text-primary font-bold">5</span></p>
+</div>
+<button class="size-8 rounded-lg bg-[#f0f2f4] dark:bg-[#2d3748] flex items-center justify-center hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<!-- Product Item -->
+<div class="flex items-center gap-4 p-4 border-b border-[#f0f2f4] dark:border-[#2d3748] last:border-0">
+<div class="size-12 rounded-lg bg-cover bg-center" data-alt="AirPods Pro Gen 2 MagSafe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMNlGbq-u5MkLFK8YkjAM58wZ0SSrTJYbF2Wc0xYoMtnBfZh_u4gBFKljHqDL1wdx6-j1lTS9PL4TKZJPdg9tNnH5a3gxSCohHt3XWeXjgqYMlxW6cGi3nsrxwlgCtg0BIlaTXGaknYowDsJF3337smMXPVxSaQaXCnVCT4zgKJiyAY6ysN5aUFrL8W2WgXBze-s8RacPXFfr1YJMLFvGims76A30nG7AtnRdg_3Oyl7CIGk8V6BVrdDGB_eH9hy3Eio2-yCSGXGiG');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-[#111418] dark:text-white truncate">AirPods Pro Gen 2 USB-C</p>
+<p class="text-xs text-[#637588] dark:text-gray-400">Tồn kho: <span class="text-primary font-bold">3</span></p>
+</div>
+<button class="size-8 rounded-lg bg-[#f0f2f4] dark:bg-[#2d3748] flex items-center justify-center hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+<!-- Product Item -->
+<div class="flex items-center gap-4 p-4 border-b border-[#f0f2f4] dark:border-[#2d3748] last:border-0">
+<div class="size-12 rounded-lg bg-cover bg-center" data-alt="MacBook Air M2 13 inch Midnight" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBu7apTxOmXiH-FyjkQN0aasJAR5D7WRMURULYmnUyRMk8rFfQeqouQBp_zzDnHw4WxxvGpIM5jasDRNi168wOV_eZtGO56hAHjHcNA8YBBf-BW8Qx_cbfDxYdi3bErlsVcscemPuwznjub7oprmCcabrmyZ2r77USxOOKQAb-M420KPoZdwUDOl1VRzj4fUYtykCHJW98SFWQsEacyI7w0kMnfi1SGR3zPDZTjJ1R2Z5iRrnt1hQG8CpJxKWBsOK9ILv2R1PFMLku');"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-[#111418] dark:text-white truncate">MacBook Air M2 13-inch</p>
+<p class="text-xs text-[#637588] dark:text-gray-400">Tồn kho: <span class="text-primary font-bold">1</span></p>
+</div>
+<button class="size-8 rounded-lg bg-[#f0f2f4] dark:bg-[#2d3748] flex items-center justify-center hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="p-4 bg-[#f8f9fa] dark:bg-[#1a232e] text-center border-t border-[#dce0e5] dark:border-[#2d3748]">
+<a class="text-xs font-bold text-primary hover:underline" href="#">Xem tất cả cảnh báo kho</a>
+</div>
+</div>
+</div>
+<!-- Recent Orders Section -->
+<div class="mt-8 bg-white dark:bg-[#1a232e] rounded-xl border border-[#dce0e5] dark:border-[#2d3748] shadow-sm">
+<div class="flex items-center justify-between p-6 border-b border-[#dce0e5] dark:border-[#2d3748]">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Đơn hàng mới nhất</h3>
+<button class="text-sm font-bold text-primary hover:underline">Xem danh sách đầy đủ</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-[#f8f9fa] dark:bg-[#1a232e]">
+<tr>
+<th class="px-6 py-3 text-[#637588] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Mã đơn hàng</th>
+<th class="px-6 py-3 text-[#637588] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Khách hàng</th>
+<th class="px-6 py-3 text-[#637588] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Trạng thái</th>
+<th class="px-6 py-3 text-[#637588] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Tổng tiền</th>
+<th class="px-6 py-3 text-[#637588] dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Ngày đặt</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#f0f2f4] dark:divide-[#2d3748]">
+<tr>
+<td class="px-6 py-4 text-sm font-medium text-[#111418] dark:text-white">#CPS12345</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-[#f0f2f4] flex items-center justify-center font-bold text-xs text-primary">AN</div>
+<span class="text-sm text-[#111418] dark:text-white">Nguyễn Văn An</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 uppercase">Đã thanh toán</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-[#111418] dark:text-white">28.990.000đ</td>
+<td class="px-6 py-4 text-sm text-[#637588] dark:text-gray-400">14:12 - 24/05</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-medium text-[#111418] dark:text-white">#CPS12344</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-[#f0f2f4] flex items-center justify-center font-bold text-xs text-primary">MT</div>
+<span class="text-sm text-[#111418] dark:text-white">Trần Minh Tú</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-orange-100 text-orange-700 uppercase">Chờ xử lý</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-[#111418] dark:text-white">12.450.000đ</td>
+<td class="px-6 py-4 text-sm text-[#637588] dark:text-gray-400">13:45 - 24/05</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm font-medium text-[#111418] dark:text-white">#CPS12343</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-[#f0f2f4] flex items-center justify-center font-bold text-xs text-primary">HL</div>
+<span class="text-sm text-[#111418] dark:text-white">Lê Hoàng</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-blue-100 text-blue-700 uppercase">Đang giao</span>
+</td>
+<td class="px-6 py-4 text-sm font-bold text-[#111418] dark:text-white">5.600.000đ</td>
+<td class="px-6 py-4 text-sm text-[#637588] dark:text-gray-400">10:20 - 24/05</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</body></html>

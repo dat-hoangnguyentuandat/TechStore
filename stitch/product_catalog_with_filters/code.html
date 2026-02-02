@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Danh Mục &amp; Bộ Lọc | TechStore</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#d70018", 
+              "background-light": "#f4f6f8",
+              "background-dark": "#121212",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e1e1e",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+<style type="text/tailwindcss">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200">
+<header class="sticky top-0 z-50 bg-primary text-white shadow-md">
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-6">
+<div class="flex items-center gap-8">
+<div class="text-2xl font-bold tracking-tight uppercase">TechStore</div>
+<div class="hidden lg:flex items-center bg-white/20 px-3 py-2 rounded-lg w-96">
+<span class="material-icons text-white/80 mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm placeholder-white/70 w-full outline-none" placeholder="Bạn cần tìm gì?..." type="text"/>
+</div>
+</div>
+<nav class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-2 cursor-pointer">
+<span class="material-icons">phone_iphone</span>
+<span class="text-sm font-medium">Điện thoại</span>
+</div>
+<div class="hidden md:flex items-center gap-2 cursor-pointer relative">
+<span class="material-icons">shopping_cart</span>
+<span class="text-sm font-medium">Giỏ hàng</span>
+<span class="absolute -top-1 -right-1 bg-white text-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+</div>
+<button class="p-2 rounded-full hover:bg-white/10 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons">dark_mode</span>
+</button>
+</nav>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-6">
+<nav class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-6">
+<a class="hover:text-primary" href="#">Trang chủ</a>
+<span class="material-icons text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100 font-medium">Điện thoại</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+<aside class="lg:col-span-1 space-y-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined">filter_list</span>
+<span class="font-bold text-lg">Bộ lọc</span>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-sm text-slate-500">factory</span>
+<h3 class="font-bold uppercase text-xs tracking-wider text-slate-500">Hãng sản xuất</h3>
+</div>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input class="rounded text-primary focus:ring-primary h-4 w-4 border-slate-300 dark:border-slate-700 dark:bg-slate-800" type="checkbox"/>
+<span class="ml-3 text-sm group-hover:text-primary transition-colors">Apple</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4 border-slate-300 dark:border-slate-700 dark:bg-slate-800" type="checkbox"/>
+<span class="ml-3 text-sm group-hover:text-primary transition-colors">Samsung</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="rounded text-primary focus:ring-primary h-4 w-4 border-slate-300 dark:border-slate-700 dark:bg-slate-800" type="checkbox"/>
+<span class="ml-3 text-sm group-hover:text-primary transition-colors">Xiaomi</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="rounded text-primary focus:ring-primary h-4 w-4 border-slate-300 dark:border-slate-700 dark:bg-slate-800" type="checkbox"/>
+<span class="ml-3 text-sm group-hover:text-primary transition-colors">Oppo</span>
+</label>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="font-bold mb-4 uppercase text-xs tracking-wider text-slate-500">Mức giá</h3>
+<div class="space-y-4">
+<input class="w-full accent-primary bg-slate-200 dark:bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer" type="range"/>
+<div class="flex items-center justify-between text-xs font-semibold">
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">0đ</span>
+<span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded">50.000.000đ</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="font-bold mb-4 uppercase text-xs tracking-wider text-slate-500">Chọn theo nhu cầu</h3>
+<div class="grid grid-cols-1 gap-2">
+<button class="text-left px-3 py-2 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors">Chơi game</button>
+<button class="text-left px-3 py-2 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors">Pin trâu</button>
+<button class="text-left px-3 py-2 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors">Chụp ảnh đẹp</button>
+<button class="text-left px-3 py-2 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors">Mỏng nhẹ</button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="font-bold mb-4 uppercase text-xs tracking-wider text-slate-500">RAM</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary transition-colors">4GB</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded-lg border border-primary text-primary bg-primary/10">8GB</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary transition-colors">12GB</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary transition-colors">16GB</button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<h3 class="font-bold mb-4 uppercase text-xs tracking-wider text-slate-500">Bộ nhớ trong</h3>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary transition-colors">128GB</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded-lg border border-primary bg-primary/10 text-primary">256GB</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary transition-colors">512GB</button>
+<button class="px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:border-primary transition-colors">1TB</button>
+</div>
+</div>
+</aside>
+<div class="lg:col-span-3">
+<div class="bg-surface-light dark:bg-surface-dark p-3 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between mb-6 gap-4">
+<div class="flex items-center gap-4">
+<span class="text-sm font-semibold ml-2">Xem 24 sản phẩm</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-500">Sắp xếp theo:</span>
+<select class="bg-slate-50 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-primary py-1.5 px-3">
+<option>Mới nhất</option>
+<option>Giá thấp</option>
+<option>Giá cao</option>
+<option>Bán chạy nhất</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+<div class="relative p-4 aspect-square flex items-center justify-center bg-slate-50 dark:bg-slate-900/50">
+<img alt="Samsung S24 Ultra" class="object-contain h-48 group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEhxXVaj-K20nY3BrRdU7LVBq5MAX1zpItSIcFmQEXmnTK3_uRwNEOPVmjPETKwxc8EO3OKDPEvFRIXVUhYpdyDRwThWl_43Y2jaZADgPNzgXyIN6pyk0KgDIPVGMA04xr57YMnuGsdi0RfTQ4magui3-_hEtTRcrneCrgMfR8LilvBhNMlNpW6TTNmuD1IpDK8eV5n7x7y2rdt5m9uUDORkr59WtLWs-M3jMCXXeHcJeoAlPg6i8ykGbQDjk0l1ALYH3P43_WeySh"/>
+<div class="absolute top-2 left-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                            GIẢM GIÁ SỐC
+                        </div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-2 line-clamp-2 min-h-[40px] leading-tight hover:text-primary transition-colors cursor-pointer">Samsung Galaxy S24 Ultra 12GB 256GB - AI Phone</h4>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-primary font-bold text-lg">31.990.000đ</span>
+<span class="text-slate-400 text-xs line-through">36.990.000đ</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="text-[10px] text-slate-500 ml-1">(124 đánh giá)</span>
+</div>
+<button class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition-colors py-2 rounded-lg font-bold text-xs uppercase tracking-wider">
+                            Thêm vào giỏ
+                        </button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+<div class="relative p-4 aspect-square flex items-center justify-center bg-slate-50 dark:bg-slate-900/50">
+<img alt="iPhone 15 Pro" class="object-contain h-48 group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ9K31WPeM59QjWMKLMTdFZuDiUfoVVMyVOpjxIHwDP_noqy99mx4SYOQxntRfFYIISZg4C5PCH-WmBidMA9mFS2emKa46rI3gPjF3aZHxXvxKdmr3a_XH2PjDCzwjJaMVT1_IwtMI3RMZ4b0fr54nx6etBcism-vk-VHmYKy3_UYqEIIq47fEuzxULZv2wOeJobaCKE5YRNSXb83hfbfaUsGzUtMl_C4I7uFVGgYBMCaEcHZkJKx2bbuDPXyQgw-iUCYXj4muPly9"/>
+<div class="absolute top-2 left-2 bg-slate-900 text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                            MỚI
+                        </div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-2 line-clamp-2 min-h-[40px] leading-tight hover:text-primary transition-colors cursor-pointer">iPhone 15 Pro Max 256GB Natural Titanium</h4>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-primary font-bold text-lg">29.990.000đ</span>
+<span class="text-slate-400 text-xs line-through">32.990.000đ</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star_half</span>
+<span class="text-[10px] text-slate-500 ml-1">(89 đánh giá)</span>
+</div>
+<button class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition-colors py-2 rounded-lg font-bold text-xs uppercase tracking-wider">
+                            Thêm vào giỏ
+                        </button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+<div class="relative p-4 aspect-square flex items-center justify-center bg-slate-50 dark:bg-slate-900/50">
+<img alt="Xiaomi 14" class="object-contain h-48 group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHKewG1Dzmm29oLDe3mLvhI2QjhVYhrC-O3dCnDy2byHl0iqOhDd4fBAF43ZjnPcM3KJrsXPWpqqpiiY_gWbtmEeJmsHkt2bwcPzgLh2ffQuZhn0B9couR6Mhfm5eJZkGer4y1hlCQnc-jpSubszkr1C0EgH3znX_6yoqaE6RksIx3vPMgrTC9EETK1oLzfDhiKlYqj-9sVB9DZuHYNmlWxMhZuCDYy9vQdvU7--EEfTynTOC9fEzakd9TnA0KF7xe1CAYMgFWCC0a"/>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-2 line-clamp-2 min-h-[40px] leading-tight hover:text-primary transition-colors cursor-pointer">Xiaomi 14 Ultra 16GB 512GB Leica Camera</h4>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-primary font-bold text-lg">23.490.000đ</span>
+<span class="text-slate-400 text-xs line-through">26.990.000đ</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-slate-300 dark:text-slate-700 text-sm">star</span>
+<span class="text-[10px] text-slate-500 ml-1">(45 đánh giá)</span>
+</div>
+<button class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition-colors py-2 rounded-lg font-bold text-xs uppercase tracking-wider">
+                            Thêm vào giỏ
+                        </button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+<div class="relative p-4 aspect-square flex items-center justify-center bg-slate-50 dark:bg-slate-900/50">
+<img alt="Samsung Z Fold" class="object-contain h-48 group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANc_0v8m7yjfkscdPyk03BVMx9V0gNYX1vvxnrSgu0flF88gp7NeFJiN3vahdlChGNPqhYTcc-vdowsUHYMf9sapKLGJz3Qbbos5AkTgGrk6FoJrdIg21oMKqPVgIWecwR_BoOjWn8AHWMneltkJosgy8x7-rZP_H2hDEyh7oFSH-1aRbYNo45yDgM6XHSh1PyFPOSYJ9q6fUMB08Gio7gP-g6Szrq9pcm1H6DgYfxOVEeZ65Bp9XvRSPd4uI3UjNpb2hBNUF2y8mJ"/>
+<div class="absolute top-2 left-2 bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                            -15%
+                        </div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-2 line-clamp-2 min-h-[40px] leading-tight hover:text-primary transition-colors cursor-pointer">Samsung Galaxy Z Fold 5 512GB Special Edition</h4>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-primary font-bold text-lg">38.490.000đ</span>
+<span class="text-slate-400 text-xs line-through">44.990.000đ</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="text-[10px] text-slate-500 ml-1">(56 đánh giá)</span>
+</div>
+<button class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition-colors py-2 rounded-lg font-bold text-xs uppercase tracking-wider">
+                            Thêm vào giỏ
+                        </button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+<div class="relative p-4 aspect-square flex items-center justify-center bg-slate-50 dark:bg-slate-900/50">
+<img alt="Google Pixel" class="object-contain h-48 group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsbzcRhTVDZoMv85IaKoO0lw3dDk5h_qPj9q_ItW51Gmy3VM5iExZ6xn4_jJQBlQuhzhrNXmkkA0Xz4OU1dvkc6NPWCmOWt_RcOGAFlK9ATlkYAWz1Vbt2gQvb-Kvohhrw2XKwJm_SgZ7LrX1qBIbArDUbfOe2QHm4I9N4eIN_Fb8fFyQOrfRFn3O6jzxB9jF4hm1tLukSUpkvdNuCjmAz7QA962NTsWG9Qa1Fe-4zPNrl6v2zPR9GdP7Xc9VHVd10N6biMHLVHHfg"/>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-2 line-clamp-2 min-h-[40px] leading-tight hover:text-primary transition-colors cursor-pointer">Google Pixel 8 Pro 12GB 128GB Porcelain</h4>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-primary font-bold text-lg">19.990.000đ</span>
+<span class="text-slate-400 text-xs line-through">24.990.000đ</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star_half</span>
+<span class="text-[10px] text-slate-500 ml-1">(210 đánh giá)</span>
+</div>
+<button class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition-colors py-2 rounded-lg font-bold text-xs uppercase tracking-wider">
+                            Thêm vào giỏ
+                        </button>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+<div class="relative p-4 aspect-square flex items-center justify-center bg-slate-50 dark:bg-slate-900/50">
+<img alt="Oppo Reno" class="object-contain h-48 group-hover:scale-105 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIbXaLeFAvJlrQ6B12uFRVe4KskwfUvYcfqEtqQqhpMqMITo4R9rnSiYZdacZ98Vkbo0E3TwKc23tydR9CPOF7GjwybxcDQJ8DFF9URRIN2TI9OtvzZHL_WTpXnP2fo7Gw_5puhtuZ69F3HRszTBWr9AOsjFrUMTTNTHHYm3ffZnrby0OiTB7c-ggqLx4IRlzpmgzSC8fIPXHqIovAYON8unj3s_rhLU0mIBVejs41zRarotrWgr2NUCgrDEo88SSm02wK8RpauRrJ"/>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-sm mb-2 line-clamp-2 min-h-[40px] leading-tight hover:text-primary transition-colors cursor-pointer">Oppo Reno 11 5G 8GB 256GB - Chính hãng</h4>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-primary font-bold text-lg">9.990.000đ</span>
+<span class="text-slate-400 text-xs line-through">11.490.000đ</span>
+</div>
+<div class="flex items-center gap-1 mb-4">
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-amber-400 text-sm">star</span>
+<span class="material-icons text-slate-300 dark:text-slate-700 text-sm">star</span>
+<span class="text-[10px] text-slate-500 ml-1">(32 đánh giá)</span>
+</div>
+<button class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-primary hover:text-white transition-colors py-2 rounded-lg font-bold text-xs uppercase tracking-wider">
+                            Thêm vào giỏ
+                        </button>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center mt-12 gap-6">
+<button class="px-10 py-3 bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-800 rounded-xl font-bold text-sm hover:border-primary hover:text-primary transition-all shadow-sm">
+                    Xem thêm
+                </button>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-icons">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold shadow-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors font-medium">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors font-medium">3</button>
+<span class="mx-1 text-slate-400">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors font-medium">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-icons">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark py-12">
+<div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<h3 class="text-xl font-bold text-primary mb-6">TECHSTORE</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Điểm đến hàng đầu cho công nghệ và phụ kiện mới nhất. Chúng tôi cam kết cung cấp sản phẩm chất lượng cao với chế độ bảo hành và hỗ trợ tốt nhất.</p>
+</div>
+<div>
+<h4 class="font-bold mb-6">Liên kết nhanh</h4>
+<ul class="space-y-3 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Điện thoại</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Laptop</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Phụ kiện</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Khuyến mãi</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Chăm sóc khách hàng</h4>
+<ul class="space-y-3 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Liên hệ</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chính sách vận chuyển</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chính sách đổi trả</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Chính sách bảo mật</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Đăng ký nhận tin</h4>
+<div class="flex">
+<input class="bg-slate-100 dark:bg-slate-800 border-none rounded-l-lg text-sm w-full py-2.5 px-4 focus:ring-1 focus:ring-primary" placeholder="Địa chỉ Email" type="email"/>
+<button class="bg-primary text-white px-4 py-2.5 rounded-r-lg hover:brightness-110 transition-all">
+<span class="material-icons text-sm">send</span>
+</button>
+</div>
+<div class="flex gap-4 mt-6">
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-icons">facebook</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-icons">public</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-icons">smart_display</span></a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-400">
+        © 2024 TechStore. Bảo lưu mọi quyền. Thiết kế bởi sự xuất sắc.
+    </div>
+</footer>
+
+</body></html>

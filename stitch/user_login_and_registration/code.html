@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Đăng nhập &amp; Đăng ký - CellphoneS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#d70018",
+                        "background-light": "#f4f6f8",
+                        "background-dark": "#111827",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .auth-card {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center p-4">
+<div class="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl auth-card overflow-hidden">
+<div class="flex border-b border-gray-100 dark:border-gray-700">
+<button class="flex-1 py-4 text-center text-sm font-semibold border-b-2 border-primary text-primary transition-all uppercase tracking-wide" id="loginTab" onclick="switchTab('login')">
+                Đăng nhập
+            </button>
+<button class="flex-1 py-4 text-center text-sm font-semibold border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-primary transition-all uppercase tracking-wide" id="registerTab" onclick="switchTab('register')">
+                Đăng ký
+            </button>
+</div>
+<div class="p-8">
+<div class="flex flex-col items-center mb-8">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">devices</span>
+</div>
+<h2 class="text-xl font-bold text-gray-900 dark:text-white text-center" id="formTitle">Chào mừng bạn đến với CellphoneS</h2>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1" id="formSubtitle">Vui lòng đăng nhập vào tài khoản của bạn</p>
+</div>
+<form class="space-y-4" id="authForm" onsubmit="return false;">
+<div>
+<label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5 ml-1 uppercase tracking-wider">Số điện thoại hoặc Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">person</span>
+<input class="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white placeholder-gray-400" placeholder="Nhập số điện thoại hoặc email" type="text"/>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1.5">
+<label class="text-xs font-semibold text-gray-500 dark:text-gray-400 ml-1 uppercase tracking-wider">Mật khẩu</label>
+<a class="text-xs font-bold text-primary hover:underline" href="#" id="forgotPass">Quên mật khẩu?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">lock</span>
+<input class="w-full pl-10 pr-10 py-3 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all dark:text-white placeholder-gray-400" placeholder="••••••••" type="password"/>
+<button class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg hover:text-gray-600" type="button">visibility</button>
+</div>
+</div>
+<div class="hidden flex items-start space-x-2 pt-1" id="termsContainer">
+<input class="mt-1 h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary" type="checkbox"/>
+<label class="text-xs text-gray-500 dark:text-gray-400">
+                        Tôi đồng ý với các <a class="text-primary hover:underline" href="#">Điều khoản dịch vụ</a> và <a class="text-primary hover:underline" href="#">Chính sách bảo mật</a>
+</label>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl transition-all transform active:scale-[0.98] shadow-lg shadow-primary/20 mt-4 uppercase tracking-wide" id="submitBtn" type="submit">
+                    Đăng nhập
+                </button>
+</form>
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
+</div>
+<div class="relative flex justify-center text-xs uppercase">
+<span class="bg-white dark:bg-gray-800 px-3 text-gray-500 dark:text-gray-400 font-medium tracking-widest">Hoặc tiếp tục với</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<button class="flex items-center justify-center px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition-all group">
+<svg class="w-5 h-5 mr-3" viewBox="0 0 48 48">
+<path d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" fill="#EA4335"></path>
+<path d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" fill="#4285F4"></path>
+<path d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" fill="#FBBC05"></path>
+<path d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" fill="#34A853"></path>
+</svg>
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-primary transition-colors">Đăng nhập bằng Google</span>
+</button>
+</div>
+<p class="text-center mt-8 text-sm text-gray-600 dark:text-gray-400" id="toggleMsg">
+                Bạn chưa có tài khoản? 
+                <button class="text-primary font-bold hover:underline ml-1" onclick="switchTab('register')">Đăng ký ngay</button>
+</p>
+</div>
+</div>
+<button class="fixed bottom-6 right-6 w-12 h-12 bg-white dark:bg-gray-700 rounded-full shadow-lg flex items-center justify-center border border-gray-100 dark:border-gray-600" onclick="toggleDarkMode()">
+<span class="material-symbols-outlined text-gray-600 dark:text-yellow-400" id="themeIcon">dark_mode</span>
+</button>
+<script>
+        function switchTab(mode) {
+            const loginTab = document.getElementById('loginTab');
+            const registerTab = document.getElementById('registerTab');
+            const formTitle = document.getElementById('formTitle');
+            const formSubtitle = document.getElementById('formSubtitle');
+            const submitBtn = document.getElementById('submitBtn');
+            const toggleMsg = document.getElementById('toggleMsg');
+            const termsContainer = document.getElementById('termsContainer');
+            const forgotPass = document.getElementById('forgotPass');
+            if (mode === 'login') {
+                loginTab.classList.add('border-primary', 'text-primary');
+                loginTab.classList.remove('border-transparent', 'text-gray-500');
+                registerTab.classList.remove('border-primary', 'text-primary');
+                registerTab.classList.add('border-transparent', 'text-gray-500');
+                formTitle.textContent = 'Chào mừng bạn đến với CellphoneS';
+                formSubtitle.textContent = 'Vui lòng đăng nhập vào tài khoản của bạn';
+                submitBtn.textContent = 'Đăng nhập';
+                forgotPass.classList.remove('hidden');
+                termsContainer.classList.add('hidden');
+                toggleMsg.innerHTML = 'Bạn chưa có tài khoản? <button onclick="switchTab(\'register\')" class="text-primary font-bold hover:underline ml-1">Đăng ký ngay</button>';
+            } else {
+                registerTab.classList.add('border-primary', 'text-primary');
+                registerTab.classList.remove('border-transparent', 'text-gray-500');
+                loginTab.classList.remove('border-primary', 'text-primary');
+                loginTab.classList.add('border-transparent', 'text-gray-500');
+                formTitle.textContent = 'Tham gia với CellphoneS!';
+                formSubtitle.textContent = 'Tạo tài khoản để bắt đầu mua sắm';
+                submitBtn.textContent = 'Đăng ký';
+                forgotPass.classList.add('hidden');
+                termsContainer.classList.remove('hidden');
+                toggleMsg.innerHTML = 'Đã có tài khoản? <button onclick="switchTab(\'login\')" class="text-primary font-bold hover:underline ml-1">Đăng nhập ngay</button>';
+            }
+        }
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const icon = document.getElementById('themeIcon');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.textContent = 'dark_mode';
+            } else {
+                html.classList.add('dark');
+                icon.textContent = 'light_mode';
+            }
+        }
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('themeIcon').textContent = 'light_mode';
+        }
+    </script>
+
+</body></html>
